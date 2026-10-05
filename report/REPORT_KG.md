@@ -171,15 +171,15 @@ $ .venv/bin/python bench_kg.py --check
 [OK] Chi phí check: 1 lần gọi LLM, $0.00075. Graph nhỏ (luật + 1 bài) vẫn còn trong Neo4j để bạn xem; chạy --judge để dựng graph đầy đủ.
 ```
 
-`--check` chạy trước benchmark và chỉ dựng luật + một bài kiểm tra, nên 148 node / 292 cạnh khác graph đầy đủ. Sau đó `--judge` dựng lại graph cuối cùng 206 node / 384 cạnh, dùng cho toàn bộ ảnh và audit. Chạy lại `--check` sẽ thay graph hiện tại bằng graph nhỏ; cần chạy lại benchmark đầy đủ trước khi đối chiếu ảnh mới.
+`--check` chạy trước benchmark và chỉ dựng luật + một bài kiểm tra, nên 148 node / 292 cạnh khác graph đầy đủ. Sau đó `--judge` dựng lại graph cuối cùng 206 node / 384 cạnh, dùng cho audit và hai ảnh đếm node, cầu nối. Ảnh vụ Cái Quang Huy được giữ từ lần chạy trước như ghi chú bên dưới. Chạy lại `--check` sẽ thay graph hiện tại bằng graph nhỏ; cần chạy lại benchmark đầy đủ trước khi đối chiếu ảnh mới.
 
 Labels thực tế: Clause=99, Person=37, Article=18, Substance=17, Case=15, Crime=13, Location=7. Relationships: MENTIONS=169, HAS_CLAUSE=99, INVOLVED_IN=45, INVOLVES=26, CHARGED_WITH=18, LOCATED_IN=14, DEFINES=13. Các loại khớp sơ đồ ontology; tổng lần lượt 206 và 384.
 
-Ảnh chụp trực tiếp Neo4j Browser từ graph cuối, mỗi ảnh một khung kết quả, giữ ô truy vấn:
+Ảnh chụp trực tiếp Neo4j Browser, mỗi ảnh một khung kết quả, thấy truy vấn đã chạy:
 
 - [kg_count.png](img/kg_count.png): Q-A, bảng đếm đủ 7 labels.
 - [kg_cross_kb.png](img/kg_cross_kb.png): Q-B, 25 đường đi, Results overview gồm Article, Case, Crime, Person.
-- [kg_my_case.png](img/kg_my_case.png): Q-D, chọn **Cái Quang Huy**; 8 node/10 cạnh trong kết quả truy vấn, có cả hai Case trùng tên đã phân tích ở E3.
+- [kg_my_case.png](img/kg_my_case.png): Q-D, chọn **Cái Quang Huy**; ảnh giữ nguyên từ lần chạy trước, hiển thị 8 node/10 cạnh và cả hai Case đã phân tích ở E3. Trong snapshot graph mới nhất, Case trùng từ bài về Thành thiếu cạnh CHARGED_WITH, nên cùng truy vấn chỉ trả về 7 node/6 cạnh. Ảnh minh họa đường nối tin–luật của lần trước, không dùng để xác nhận số liệu graph mới nhất.
 
 ![Đếm node](img/kg_count.png)
 
