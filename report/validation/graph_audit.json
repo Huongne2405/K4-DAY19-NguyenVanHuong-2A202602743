@@ -1,0 +1,5645 @@
+{
+  "labels": {
+    "cypher": "MATCH (n) RETURN labels(n)[0] AS label, count(*) AS n ORDER BY n DESC",
+    "rows": [
+      {
+        "label": "Clause",
+        "n": 99
+      },
+      {
+        "label": "Person",
+        "n": 37
+      },
+      {
+        "label": "Article",
+        "n": 18
+      },
+      {
+        "label": "Substance",
+        "n": 17
+      },
+      {
+        "label": "Case",
+        "n": 15
+      },
+      {
+        "label": "Crime",
+        "n": 13
+      },
+      {
+        "label": "Location",
+        "n": 7
+      }
+    ]
+  },
+  "relationships": {
+    "cypher": "MATCH ()-[r]->() RETURN type(r) AS rel, count(*) AS n ORDER BY n DESC",
+    "rows": [
+      {
+        "rel": "MENTIONS",
+        "n": 169
+      },
+      {
+        "rel": "HAS_CLAUSE",
+        "n": 99
+      },
+      {
+        "rel": "INVOLVED_IN",
+        "n": 45
+      },
+      {
+        "rel": "INVOLVES",
+        "n": 26
+      },
+      {
+        "rel": "CHARGED_WITH",
+        "n": 18
+      },
+      {
+        "rel": "LOCATED_IN",
+        "n": 14
+      },
+      {
+        "rel": "DEFINES",
+        "n": 13
+      }
+    ]
+  },
+  "doc_coverage": {
+    "cypher": "MATCH (n) WHERE n.doc_id IS NOT NULL RETURN n.doc_id AS doc_id, count(*) AS n ORDER BY doc_id",
+    "rows": [
+      {
+        "doc_id": "blhs-dieu-247",
+        "n": 5
+      },
+      {
+        "doc_id": "blhs-dieu-248",
+        "n": 6
+      },
+      {
+        "doc_id": "blhs-dieu-249",
+        "n": 6
+      },
+      {
+        "doc_id": "blhs-dieu-250",
+        "n": 6
+      },
+      {
+        "doc_id": "blhs-dieu-251",
+        "n": 6
+      },
+      {
+        "doc_id": "blhs-dieu-252",
+        "n": 6
+      },
+      {
+        "doc_id": "blhs-dieu-253",
+        "n": 7
+      },
+      {
+        "doc_id": "blhs-dieu-254",
+        "n": 4
+      },
+      {
+        "doc_id": "blhs-dieu-255",
+        "n": 6
+      },
+      {
+        "doc_id": "blhs-dieu-256",
+        "n": 4
+      },
+      {
+        "doc_id": "blhs-dieu-257",
+        "n": 6
+      },
+      {
+        "doc_id": "blhs-dieu-258",
+        "n": 6
+      },
+      {
+        "doc_id": "blhs-dieu-259",
+        "n": 4
+      },
+      {
+        "doc_id": "news-100260917203001265",
+        "n": 4
+      },
+      {
+        "doc_id": "news-100260918080821054",
+        "n": 6
+      },
+      {
+        "doc_id": "news-100260920221957595",
+        "n": 10
+      },
+      {
+        "doc_id": "news-100260922111804786",
+        "n": 2
+      },
+      {
+        "doc_id": "news-100260924095400982",
+        "n": 1
+      },
+      {
+        "doc_id": "news-100260924101703641",
+        "n": 3
+      },
+      {
+        "doc_id": "news-100260924105118645",
+        "n": 10
+      },
+      {
+        "doc_id": "news-100260924145818945",
+        "n": 3
+      },
+      {
+        "doc_id": "news-100260925144412498",
+        "n": 1
+      },
+      {
+        "doc_id": "news-100260926112415229",
+        "n": 4
+      },
+      {
+        "doc_id": "news-100260927182621527",
+        "n": 2
+      },
+      {
+        "doc_id": "news-100260928173914514",
+        "n": 7
+      },
+      {
+        "doc_id": "news-100260930085028036",
+        "n": 5
+      },
+      {
+        "doc_id": "news-100261002184934505",
+        "n": 1
+      },
+      {
+        "doc_id": "pcmt-dieu-1",
+        "n": 1
+      },
+      {
+        "doc_id": "pcmt-dieu-2",
+        "n": 15
+      },
+      {
+        "doc_id": "pcmt-dieu-3",
+        "n": 11
+      },
+      {
+        "doc_id": "pcmt-dieu-4",
+        "n": 5
+      },
+      {
+        "doc_id": "pcmt-dieu-5",
+        "n": 13
+      }
+    ]
+  },
+  "no_bridge": {
+    "cypher": "MATCH (k:Case) WHERE NOT (k)-[:CHARGED_WITH]->() RETURN k.name AS name, k.doc_id AS doc_id ORDER BY name",
+    "rows": [
+      {
+        "name": "Vụ tông cảnh sát giao thông ở An Giang",
+        "doc_id": "news-100260926112415229"
+      },
+      {
+        "name": "Vụ vận chuyển ma túy của Cái Quang Huy",
+        "doc_id": "news-100260918080821054"
+      }
+    ]
+  },
+  "substances": {
+    "cypher": "MATCH (s:Substance) RETURN s.name AS name ORDER BY toLower(s.name)",
+    "rows": [
+      {
+        "name": "Amphetamine"
+      },
+      {
+        "name": "chất ma túy"
+      },
+      {
+        "name": "Cocaine"
+      },
+      {
+        "name": "côca"
+      },
+      {
+        "name": "cần sa"
+      },
+      {
+        "name": "etomidate"
+      },
+      {
+        "name": "Heroine"
+      },
+      {
+        "name": "Ketamine"
+      },
+      {
+        "name": "ketamine"
+      },
+      {
+        "name": "ma túy"
+      },
+      {
+        "name": "ma túy tổng hợp"
+      },
+      {
+        "name": "MDMA"
+      },
+      {
+        "name": "methamphetamine"
+      },
+      {
+        "name": "Methamphetamine"
+      },
+      {
+        "name": "thuốc lắc"
+      },
+      {
+        "name": "thuốc phiện"
+      },
+      {
+        "name": "XLR-11"
+      }
+    ]
+  },
+  "cases": {
+    "cypher": "MATCH (k:Case) RETURN k.name AS name, k.doc_id AS doc_id, k.summary AS summary ORDER BY name",
+    "rows": [
+      {
+        "name": "Chuyên án A3-626P",
+        "doc_id": "news-100261002184934505",
+        "summary": "Bộ đội Biên phòng đã triệt phá chuyên án A3-626P, bắt giữ 2 đối tượng và thu giữ 40kg ma túy."
+      },
+      {
+        "name": "Vụ bắt giang hồ 'Hoàng Nato' và 126 người liên quan 8 đường dây ma túy",
+        "doc_id": "news-100260920221957595",
+        "summary": "Công an TP.HCM đã bắt giữ giang hồ 'Hoàng Nato' và 126 người liên quan đến 8 đường dây ma túy, trong đó có 9 người nước ngoài. Các nghi phạm bị cáo buộc tổ chức sử dụng trái phép chất ma túy."
+      },
+      {
+        "name": "Vụ bắt giữ giang hồ mạng 'Đức Cộng'",
+        "doc_id": "news-100260924101703641",
+        "summary": "Nguyễn Minh Đức, biệt danh 'Đức Cộng', đã bị bắt giữ về hành vi tổ chức sử dụng trái phép chất ma túy. Đức có 8 tiền án và 1 tiền sự trước khi bị bắt."
+      },
+      {
+        "name": "Vụ góp tiền mua ma túy tại Hà Nội",
+        "doc_id": "news-100260918080821054",
+        "summary": "Ba thanh niên góp tiền để Lê Minh Thành mua ma túy cho tiệc sinh nhật nhưng sau đó không tham gia. Tòa sơ thẩm tuyên phạt mỗi người 24 tháng tù về tội mua bán trái phép chất ma túy."
+      },
+      {
+        "name": "Vụ mua bán hơn 36kg ma túy tại TP.HCM",
+        "doc_id": "news-100260928173914514",
+        "summary": "Hai bị cáo Trần Thanh Tuấn và Trần Minh Tâm bị tuyên án tử hình về tội mua bán trái phép chất ma túy. Bốn bị cáo khác nhận án tù từ 2 năm 6 tháng đến 8 năm 6 tháng."
+      },
+      {
+        "name": "Vụ phát hiện 20kg ma túy tại Phú Quốc",
+        "doc_id": "news-100260927182621527",
+        "summary": "Lực lượng biên phòng phát hiện một bao tải nghi chứa 20kg ma túy trôi dạt vào bờ biển Phú Quốc. Kiện hàng được kiểm tra và xác định có chứa nhiều tinh thể rắn màu trắng nghi là chất ma túy."
+      },
+      {
+        "name": "Vụ sử dụng ma túy etomidate của Hoàng Nato và Phan Kim Nhi",
+        "doc_id": "news-100260924095400982",
+        "summary": "Hoàng Nato và TikToker Phannhibeauty khai nhận đã cùng nhau sử dụng ma túy etomidate ngụy trang trong thuốc lá điện tử. Cả hai bị bắt giữ sau khi tổ chức sử dụng ma túy."
+      },
+      {
+        "name": "Vụ triệt phá 8 đường dây ma túy tại TP.HCM",
+        "doc_id": "news-100260925144412498",
+        "summary": "Công an TP.HCM đã triệt phá 8 đường dây ma túy và bắt giữ 126 người liên quan đến các hành vi mua bán, tàng trữ, tổ chức sử dụng và sử dụng trái phép chất ma túy, trong đó có 'Hoàng Nato' và bạn gái Phan Kim Nhi."
+      },
+      {
+        "name": "Vụ tông cảnh sát giao thông ở An Giang",
+        "doc_id": "news-100260926112415229",
+        "summary": "Nguyễn Minh Nhân đã tông vào Thiếu tá Trần Ngọc Nam trong khi chạy xe không có giấy phép lái xe và sử dụng rượu, ma túy."
+      },
+      {
+        "name": "Vụ tổ chức sử dụng ma túy tại Sầm Sơn",
+        "doc_id": "news-100260930085028036",
+        "summary": "Lê Văn Đông, trong thời gian chữa bệnh bắt buộc, đã tổ chức sử dụng ma túy trên bãi biển Sầm Sơn cùng với một số người khác. Đông bị cáo buộc đã trốn viện để thực hiện hành vi này."
+      },
+      {
+        "name": "Vụ tổ chức sử dụng trái phép chất ma túy liên quan đến TikToker Phannhibeauty",
+        "doc_id": "news-100260922111804786",
+        "summary": "TikToker Phannhibeauty cùng 126 người khác bị bắt vì liên quan đến tổ chức sử dụng trái phép chất ma túy. Trong số đó có giang hồ 'Hoàng Nato'."
+      },
+      {
+        "name": "Vụ vận chuyển 840kg ma túy đá tại Campuchia",
+        "doc_id": "news-100260924145818945",
+        "summary": "Giới chức Campuchia đã bắt giữ 7 công dân Trung Quốc và thu giữ hơn 800kg chất nghi là ma túy đá trong một chiến dịch quy mô lớn."
+      },
+      {
+        "name": "Vụ vận chuyển ma túy của Cái Quang Huy",
+        "doc_id": "news-100260918080821054",
+        "summary": "Cái Quang Huy bị cáo buộc hai lần vận chuyển ma túy về Việt Nam qua sân bay Nội Bài, tổng cộng hơn 9,6kg MDMA và gần 406g Ketamine."
+      },
+      {
+        "name": "Vụ vận chuyển ma túy từ Đức về Việt Nam",
+        "doc_id": "news-100260917203001265",
+        "summary": "Cái Quang Huy bị cáo buộc hai lần vận chuyển ma túy về Việt Nam qua sân bay Nội Bài, tổng khối lượng hơn 9,6kg MDMA và gần 406g Ketamine."
+      },
+      {
+        "name": "Vụ án tại Viện Pháp y tâm thần Trung ương",
+        "doc_id": "news-100260924105118645",
+        "summary": "Vụ án liên quan đến việc 39 bác sĩ, điều dưỡng thao túng và nhận hối lộ để giúp các bị can trong các vụ án ma túy và lừa đảo có kết luận giám định tâm thần sai lệch."
+      }
+    ]
+  },
+  "empty_person_charge": {
+    "cypher": "MATCH (p:Person)-[r:INVOLVED_IN]->(k:Case) WHERE coalesce(r.charge, '') = '' RETURN p.name AS person, r.role AS role, r.sentence AS sentence, k.name AS case_name, k.doc_id AS doc_id ORDER BY person",
+    "rows": [
+      {
+        "person": "Cao Thị Bích Hằng",
+        "role": "người liên quan",
+        "sentence": "không rõ",
+        "case_name": "Vụ tổ chức sử dụng ma túy tại Sầm Sơn",
+        "doc_id": "news-100260930085028036"
+      },
+      {
+        "person": "Cái Quang Huy",
+        "role": "nghi phạm",
+        "sentence": "",
+        "case_name": "Vụ vận chuyển ma túy của Cái Quang Huy",
+        "doc_id": "news-100260918080821054"
+      },
+      {
+        "person": "Dương Văn Biết",
+        "role": "người liên quan",
+        "sentence": "",
+        "case_name": "Vụ án tại Viện Pháp y tâm thần Trung ương",
+        "doc_id": "news-100260924105118645"
+      },
+      {
+        "person": "Dương Văn Lương",
+        "role": "người liên quan",
+        "sentence": "",
+        "case_name": "Vụ án tại Viện Pháp y tâm thần Trung ương",
+        "doc_id": "news-100260924105118645"
+      },
+      {
+        "person": "Lê Văn Đông",
+        "role": "bị can",
+        "sentence": "",
+        "case_name": "Vụ án tại Viện Pháp y tâm thần Trung ương",
+        "doc_id": "news-100260924105118645"
+      },
+      {
+        "person": "Nguyễn Minh Nhân",
+        "role": "bị can",
+        "sentence": "",
+        "case_name": "Vụ tông cảnh sát giao thông ở An Giang",
+        "doc_id": "news-100260926112415229"
+      },
+      {
+        "person": "Nguyễn Thị Mai Anh",
+        "role": "bị cáo",
+        "sentence": "không rõ",
+        "case_name": "Vụ tổ chức sử dụng ma túy tại Sầm Sơn",
+        "doc_id": "news-100260930085028036"
+      },
+      {
+        "person": "Nguyễn Thị Thu Hoài",
+        "role": "cán bộ",
+        "sentence": "",
+        "case_name": "Vụ án tại Viện Pháp y tâm thần Trung ương",
+        "doc_id": "news-100260924105118645"
+      },
+      {
+        "person": "Nguyễn Văn Quang",
+        "role": "cán bộ",
+        "sentence": "",
+        "case_name": "Vụ án tại Viện Pháp y tâm thần Trung ương",
+        "doc_id": "news-100260924105118645"
+      },
+      {
+        "person": "Ngô Việt Dũng",
+        "role": "người liên quan",
+        "sentence": "không rõ",
+        "case_name": "Vụ tổ chức sử dụng ma túy tại Sầm Sơn",
+        "doc_id": "news-100260930085028036"
+      },
+      {
+        "person": "Trần Ngọc Nam",
+        "role": "người liên quan",
+        "sentence": "",
+        "case_name": "Vụ tông cảnh sát giao thông ở An Giang",
+        "doc_id": "news-100260926112415229"
+      },
+      {
+        "person": "Trần Quốc An",
+        "role": "người liên quan",
+        "sentence": "không rõ",
+        "case_name": "Vụ tổ chức sử dụng ma túy tại Sầm Sơn",
+        "doc_id": "news-100260930085028036"
+      },
+      {
+        "person": "Trần Văn Trường",
+        "role": "người liên quan",
+        "sentence": "",
+        "case_name": "Vụ án tại Viện Pháp y tâm thần Trung ương",
+        "doc_id": "news-100260924105118645"
+      }
+    ]
+  },
+  "mdma_cases": {
+    "cypher": "MATCH (k:Case)-[r:INVOLVES]->(s:Substance) WHERE toLower(s.name) = 'mdma' OPTIONAL MATCH (p:Person)-[:INVOLVED_IN]->(k) RETURN k.name AS case_name, k.doc_id AS doc_id, r.amount AS amount, collect(DISTINCT p.name) AS people ORDER BY case_name",
+    "rows": [
+      {
+        "case_name": "Vụ góp tiền mua ma túy tại Hà Nội",
+        "doc_id": "news-100260918080821054",
+        "amount": "5 viên",
+        "people": [
+          "Nguyễn Quang Hưng",
+          "Kim Xuân Tuấn",
+          "Trịnh Vũ Kiên",
+          "Lê Minh Thành"
+        ]
+      },
+      {
+        "case_name": "Vụ tổ chức sử dụng ma túy tại Sầm Sơn",
+        "doc_id": "news-100260930085028036",
+        "amount": "0,686g",
+        "people": [
+          "Trần Quốc An",
+          "Cao Thị Bích Hằng",
+          "Lê Văn Đông",
+          "Ngô Việt Dũng",
+          "Nguyễn Thị Mai Anh"
+        ]
+      },
+      {
+        "case_name": "Vụ vận chuyển ma túy của Cái Quang Huy",
+        "doc_id": "news-100260918080821054",
+        "amount": "9,6kg",
+        "people": [
+          "Cái Quang Huy"
+        ]
+      },
+      {
+        "case_name": "Vụ vận chuyển ma túy từ Đức về Việt Nam",
+        "doc_id": "news-100260917203001265",
+        "amount": "9.6kg",
+        "people": [
+          "Nguyễn Tiến Đạt",
+          "Cái Quang Huy"
+        ]
+      },
+      {
+        "case_name": "Vụ án tại Viện Pháp y tâm thần Trung ương",
+        "doc_id": "news-100260924105118645",
+        "amount": "",
+        "people": [
+          "Nguyễn Thị Mai Anh",
+          "Nguyễn Văn Quang",
+          "Dương Văn Biết",
+          "DJ Thái Hoàng",
+          "Dương Văn Lương",
+          "Trần Văn Trường",
+          "Lê Văn Đông",
+          "Nguyễn Thị Thu Hoài",
+          "Bùi Thị Thanh Thủy"
+        ]
+      }
+    ]
+  },
+  "repeated_person_cases": {
+    "cypher": "MATCH (p:Person)-[:INVOLVED_IN]->(k:Case) WITH p, collect(DISTINCT {name:k.name, doc_id:k.doc_id}) AS cases WHERE size(cases) > 1 RETURN p.name AS person, p.aliases AS aliases, cases ORDER BY person",
+    "rows": [
+      {
+        "person": "Cái Quang Huy",
+        "aliases": [],
+        "cases": [
+          {
+            "name": "Vụ vận chuyển ma túy từ Đức về Việt Nam",
+            "doc_id": "news-100260917203001265"
+          },
+          {
+            "name": "Vụ vận chuyển ma túy của Cái Quang Huy",
+            "doc_id": "news-100260918080821054"
+          }
+        ]
+      },
+      {
+        "person": "Dương Minh Tuấn",
+        "aliases": [
+          "Hoàng Nato"
+        ],
+        "cases": [
+          {
+            "name": "Vụ bắt giang hồ 'Hoàng Nato' và 126 người liên quan 8 đường dây ma túy",
+            "doc_id": "news-100260920221957595"
+          },
+          {
+            "name": "Vụ tổ chức sử dụng trái phép chất ma túy liên quan đến TikToker Phannhibeauty",
+            "doc_id": "news-100260922111804786"
+          },
+          {
+            "name": "Vụ sử dụng ma túy etomidate của Hoàng Nato và Phan Kim Nhi",
+            "doc_id": "news-100260924095400982"
+          },
+          {
+            "name": "Vụ triệt phá 8 đường dây ma túy tại TP.HCM",
+            "doc_id": "news-100260925144412498"
+          }
+        ]
+      },
+      {
+        "person": "Lê Văn Đông",
+        "aliases": [],
+        "cases": [
+          {
+            "name": "Vụ án tại Viện Pháp y tâm thần Trung ương",
+            "doc_id": "news-100260924105118645"
+          },
+          {
+            "name": "Vụ tổ chức sử dụng ma túy tại Sầm Sơn",
+            "doc_id": "news-100260930085028036"
+          }
+        ]
+      },
+      {
+        "person": "Nguyễn Thị Mai Anh",
+        "aliases": [
+          "bà 'trùm'",
+          "bà trùm"
+        ],
+        "cases": [
+          {
+            "name": "Vụ án tại Viện Pháp y tâm thần Trung ương",
+            "doc_id": "news-100260924105118645"
+          },
+          {
+            "name": "Vụ tổ chức sử dụng ma túy tại Sầm Sơn",
+            "doc_id": "news-100260930085028036"
+          }
+        ]
+      },
+      {
+        "person": "Phan Kim Nhi",
+        "aliases": [
+          "Phannhibeauty",
+          "TikToker Phannhibeauty"
+        ],
+        "cases": [
+          {
+            "name": "Vụ tổ chức sử dụng trái phép chất ma túy liên quan đến TikToker Phannhibeauty",
+            "doc_id": "news-100260922111804786"
+          },
+          {
+            "name": "Vụ sử dụng ma túy etomidate của Hoàng Nato và Phan Kim Nhi",
+            "doc_id": "news-100260924095400982"
+          },
+          {
+            "name": "Vụ triệt phá 8 đường dây ma túy tại TP.HCM",
+            "doc_id": "news-100260925144412498"
+          }
+        ]
+      }
+    ]
+  },
+  "article_255": {
+    "cypher": "MATCH (a:Article {id:'Điều 255 BLHS'})-[:HAS_CLAUSE]->(cl:Clause) RETURN cl.number AS number, cl.penalty AS penalty ORDER BY number",
+    "rows": [
+      {
+        "number": 1,
+        "penalty": "phạt tù từ 02 năm đến 07 năm"
+      },
+      {
+        "number": 2,
+        "penalty": "phạt tù từ 07 năm đến 15 năm"
+      },
+      {
+        "number": 3,
+        "penalty": "phạt tù từ 15 năm đến 20 năm"
+      },
+      {
+        "number": 4,
+        "penalty": "phạt tù 20 năm hoặc tù chung thân"
+      },
+      {
+        "number": 5,
+        "penalty": "phạt tiền từ 50.000.000 đồng đến 500.000.000 đồng, phạt quản chế, cấm cư trú từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản"
+      }
+    ]
+  },
+  "missing_doc_id": {
+    "cypher": "MATCH (n) WHERE n.doc_id IS NULL RETURN labels(n)[0] AS label, count(*) AS n ORDER BY label",
+    "rows": [
+      {
+        "label": "Crime",
+        "n": 13
+      },
+      {
+        "label": "Substance",
+        "n": 17
+      }
+    ]
+  },
+  "stats": {
+    "nodes": 206,
+    "relationships": 384
+  },
+  "nodes": [
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:0",
+      "labels": [
+        "Case"
+      ],
+      "properties": {
+        "date": "2025-01-21",
+        "summary": "Cái Quang Huy bị cáo buộc hai lần vận chuyển ma túy về Việt Nam qua sân bay Nội Bài, tổng khối lượng hơn 9,6kg MDMA và gần 406g Ketamine.",
+        "name": "Vụ vận chuyển ma túy từ Đức về Việt Nam",
+        "doc_id": "news-100260917203001265",
+        "source_title": "Từ mối quen biết tại nhà hàng ở Berlin đến những kiện hàng chứa hơn 10kg ma túy về Việt Nam"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:1",
+      "labels": [
+        "Location"
+      ],
+      "properties": {
+        "name": "Hà Nội",
+        "doc_id": "news-100260917203001265"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:10",
+      "labels": [
+        "Case"
+      ],
+      "properties": {
+        "date": "",
+        "summary": "Cái Quang Huy bị cáo buộc hai lần vận chuyển ma túy về Việt Nam qua sân bay Nội Bài, tổng cộng hơn 9,6kg MDMA và gần 406g Ketamine.",
+        "name": "Vụ vận chuyển ma túy của Cái Quang Huy",
+        "doc_id": "news-100260918080821054",
+        "source_title": "Góp 14 triệu đồng mua ma túy rồi nói đã ‘rút lui’, 3 thanh niên kháng cáo kêu oan"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:11",
+      "labels": [
+        "Case"
+      ],
+      "properties": {
+        "date": "2023-09-21",
+        "summary": "Công an TP.HCM đã bắt giữ giang hồ 'Hoàng Nato' và 126 người liên quan đến 8 đường dây ma túy, trong đó có 9 người nước ngoài. Các nghi phạm bị cáo buộc tổ chức sử dụng trái phép chất ma túy.",
+        "name": "Vụ bắt giang hồ 'Hoàng Nato' và 126 người liên quan 8 đường dây ma túy",
+        "doc_id": "news-100260920221957595",
+        "source_title": "Bắt giang hồ 'Hoàng Nato' và 126 người liên quan 8 đường dây ma túy"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:12",
+      "labels": [
+        "Location"
+      ],
+      "properties": {
+        "name": "TP.HCM",
+        "doc_id": "news-100260920221957595"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:13",
+      "labels": [
+        "Substance"
+      ],
+      "properties": {
+        "name": "etomidate"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:14",
+      "labels": [
+        "Substance"
+      ],
+      "properties": {
+        "name": "ketamine"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:148",
+      "labels": [
+        "Article"
+      ],
+      "properties": {
+        "law": "BLHS",
+        "id": "Điều 247 BLHS",
+        "title": "Tội trồng cây thuốc phiện, cây côca, cây cần sa hoặc các loại cây khác có chứa chất ma túy",
+        "doc_id": "blhs-dieu-247"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:149",
+      "labels": [
+        "Crime"
+      ],
+      "properties": {
+        "name": "trồng cây thuốc phiện, cây côca, cây cần sa hoặc các loại cây khác có chứa chất ma túy"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:15",
+      "labels": [
+        "Substance"
+      ],
+      "properties": {
+        "name": "thuốc lắc"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:150",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 1,
+        "penalty": "phạt tù từ 06 tháng đến 03 năm",
+        "id": "Điều 247 BLHS khoản 1",
+        "text": "1. Người nào trồng cây thuốc phiện, cây côca, cây cần sa hoặc các loại cây khác có chứa chất ma túy do Chính phủ quy định thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 06 tháng đến 03 năm:\n\na) Đã được giáo dục 02 lần và đã được tạo điều kiện ổn định cuộc sống;\n\nb) Đã bị xử phạt vi phạm hành chính về hành vi này hoặc đã bị kết án về tội này, chưa được xóa án tích mà còn vi phạm;\n\nc) Với số lượng từ 500 cây đến dưới 3.000 cây.",
+        "doc_id": "blhs-dieu-247"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151",
+      "labels": [
+        "Substance"
+      ],
+      "properties": {
+        "name": "cần sa"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152",
+      "labels": [
+        "Substance"
+      ],
+      "properties": {
+        "name": "thuốc phiện"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153",
+      "labels": [
+        "Substance"
+      ],
+      "properties": {
+        "name": "côca"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:154",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 2,
+        "penalty": "phạt tù từ 03 năm đến 07 năm",
+        "id": "Điều 247 BLHS khoản 2",
+        "text": "2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 03 năm đến 07 năm:\n\na) Có tổ chức;\n\nb) Với số lượng 3.000 cây trở lên;\n\nc) Tái phạm nguy hiểm.",
+        "doc_id": "blhs-dieu-247"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:155",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 3,
+        "penalty": "phạt tiền từ 5.000.000 đồng đến 50.000.000 đồng",
+        "id": "Điều 247 BLHS khoản 3",
+        "text": "3. Người phạm tội còn có thể bị phạt tiền từ 5.000.000 đồng đến 50.000.000 đồng.",
+        "doc_id": "blhs-dieu-247"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:156",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 4,
+        "penalty": "",
+        "id": "Điều 247 BLHS khoản 4",
+        "text": "4. Người nào phạm tội thuộc khoản 1 Điều này, nhưng đã tự nguyện phá bỏ, giao nộp cho cơ quan chức năng có thẩm quyền trước khi thu hoạch, thì có thể được miễn trách nhiệm hình sự.",
+        "doc_id": "blhs-dieu-247"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:157",
+      "labels": [
+        "Article"
+      ],
+      "properties": {
+        "law": "BLHS",
+        "id": "Điều 248 BLHS",
+        "title": "Tội sản xuất trái phép chất ma túy",
+        "doc_id": "blhs-dieu-248"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:158",
+      "labels": [
+        "Crime"
+      ],
+      "properties": {
+        "name": "sản xuất trái phép chất ma túy"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:159",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 1,
+        "penalty": "phạt tù từ 02 năm đến 07 năm",
+        "id": "Điều 248 BLHS khoản 1",
+        "text": "1. Người nào sản xuất trái phép chất ma túy dưới bất kỳ hình thức nào, thì bị phạt tù từ 02 năm đến 07 năm.",
+        "doc_id": "blhs-dieu-248"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:16",
+      "labels": [
+        "Substance"
+      ],
+      "properties": {
+        "name": "ma túy tổng hợp"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:160",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 2,
+        "penalty": "phạt tù từ 07 năm đến 15 năm",
+        "id": "Điều 248 BLHS khoản 2",
+        "text": "2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 07 năm đến 15 năm:\n\na) Có tổ chức;\n\nb) Phạm tội 02 lần trở lên;\n\nc) Lợi dụng chức vụ, quyền hạn;\n\nd) Lợi dụng danh nghĩa cơ quan, tổ chức;\n\nđ) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng từ 500 gam đến dưới 01 kilôgam;\n\ne) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng từ 05 gam đến dưới 30 gam;\n\ng) Các chất ma túy khác ở thể rắn có khối lượng từ 20 gam đến dưới 100 gam;\n\nh) Các chất ma túy khác ở thể lỏng có thể tích từ 100 mililít đến dưới 200 mililít;\n\ni) Tái phạm nguy hiểm;\n\nk) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm đ đến điểm h khoản này.",
+        "doc_id": "blhs-dieu-248"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:161",
+      "labels": [
+        "Substance"
+      ],
+      "properties": {
+        "name": "Heroine"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:162",
+      "labels": [
+        "Substance"
+      ],
+      "properties": {
+        "name": "Cocaine"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163",
+      "labels": [
+        "Substance"
+      ],
+      "properties": {
+        "name": "Methamphetamine"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:164",
+      "labels": [
+        "Substance"
+      ],
+      "properties": {
+        "name": "Amphetamine"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165",
+      "labels": [
+        "Substance"
+      ],
+      "properties": {
+        "name": "MDMA"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:166",
+      "labels": [
+        "Substance"
+      ],
+      "properties": {
+        "name": "XLR-11"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:167",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 3,
+        "penalty": "phạt tù từ 15 năm đến 20 năm",
+        "id": "Điều 248 BLHS khoản 3",
+        "text": "3. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 15 năm đến 20 năm:\n\na) Có tính chất chuyên nghiệp;\n\nb) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng từ 01 kilôgam đến dưới 05 kilôgam;\n\nc) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng từ 30 gam đến dưới 100 gam;\n\nd) Các chất ma túy khác ở thể rắn có khối lượng từ 100 gam đến dưới 300 gam;\n\nđ) Các chất ma túy khác ở thể lỏng có thể tích từ 200 mililít đến dưới 750 mililít;\n\ne) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm b đến điểm đ khoản này.",
+        "doc_id": "blhs-dieu-248"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:168",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 4,
+        "penalty": "phạt tù 20 năm, tù chung thân hoặc tử hình",
+        "id": "Điều 248 BLHS khoản 4",
+        "text": "4. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù 20 năm, tù chung thân hoặc tử hình:\n\na) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng 05 kilôgam trở lên;\n\nb) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng 100 gam trở lên;\n\nc) Các chất ma túy khác ở thể rắn có khối lượng 300 gam trở lên;\n\nd) Các chất ma túy khác ở thể lỏng có thể tích 750 mililít trở lên;\n\nđ) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm a đến điểm d khoản này.",
+        "doc_id": "blhs-dieu-248"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:169",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 5,
+        "penalty": "phạt tiền từ 5.000.000 đồng đến 500.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản",
+        "id": "Điều 248 BLHS khoản 5",
+        "text": "5. Người phạm tội còn có thể bị phạt tiền từ 5.000.000 đồng đến 500.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản.",
+        "doc_id": "blhs-dieu-248"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:17",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [
+          "Hoàng Nato"
+        ],
+        "name": "Dương Minh Tuấn",
+        "doc_id": "news-100260920221957595"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:170",
+      "labels": [
+        "Article"
+      ],
+      "properties": {
+        "law": "BLHS",
+        "id": "Điều 249 BLHS",
+        "title": "Tội tàng trữ trái phép chất ma túy",
+        "doc_id": "blhs-dieu-249"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:171",
+      "labels": [
+        "Crime"
+      ],
+      "properties": {
+        "name": "tàng trữ trái phép chất ma túy"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:172",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 1,
+        "penalty": "phạt tù từ 01 năm đến 05 năm",
+        "id": "Điều 249 BLHS khoản 1",
+        "text": "1. Người nào tàng trữ trái phép chất ma túy mà không nhằm mục đích mua bán, vận chuyển, sản xuất trái phép chất ma túy thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 01 năm đến 05 năm:\n\na) Đã bị xử phạt vi phạm hành chính về hành vi quy định tại Điều này hoặc đã bị kết án về tội này hoặc một trong các tội quy định tại các điều 248, 250, 251 và 252 của Bộ luật này, chưa được xóa án tích mà còn vi phạm;\n\nb) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng từ 01 gam đến dưới 500 gam;\n\nc) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng từ 0,1 gam đến dưới 05 gam;\n\nd) Lá cây côca; lá khát (lá cây Catha edulis); lá, rễ, thân, cành, hoa, quả của cây cần sa hoặc bộ phận của cây khác có chứa chất ma túy do Chính phủ quy định có khối lượng từ 01 kilôgam đến dưới 10 kilôgam;\n\nđ) Quả thuốc phiện khô có khối lượng từ 05 kilôgam đến dưới 50 kilôgam;\n\ne) Quả thuốc phiện tươi có khối lượng từ 01 kilôgam đến dưới 10 kilôgam;\n\ng) Các chất ma túy khác ở thể rắn có khối lượng từ 01 gam đến dưới 20 gam;\n\nh) Các chất ma túy khác ở thể lỏng có thể tích từ 10 mililít đến dưới 100 mililít;\n\ni) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm b đến điểm h khoản này.",
+        "doc_id": "blhs-dieu-249"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:173",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 2,
+        "penalty": "phạt tù từ 05 năm đến 10 năm",
+        "id": "Điều 249 BLHS khoản 2",
+        "text": "2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 05 năm đến 10 năm:\n\na) Có tổ chức;\n\nb) Phạm tội 02 lần trở lên;\n\nc) Lợi dụng chức vụ, quyền hạn;\n\nd) Lợi dụng danh nghĩa cơ quan, tổ chức;\n\nđ) Sử dụng người dưới 16 tuổi vào việc phạm tội;\n\ne) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng từ 500 gam đến dưới 01 kilôgam;\n\ng) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng từ 05 gam đến dưới 30 gam;\n\nh) Lá cây côca; lá khát (lá cây Catha edulis); lá, rễ, thân, cành, hoa, quả của cây cần sa hoặc bộ phận của cây khác có chứa chất ma túy do Chính phủ quy định có khối lượng từ 10 kilôgam đến dưới 25 kilôgam;\n\ni) Quả thuốc phiện khô có khối lượng từ 50 kilôgam đến dưới 200 kilôgam;\n\nk) Quả thuốc phiện tươi có khối lượng từ 10 kilôgam đến dưới 50 kilôgam;\n\nl) Các chất ma túy khác ở thể rắn có khối lượng từ 20 gam đến dưới 100 gam;\n\nm) Các chất ma túy khác ở thể lỏng có thể tích từ 100 mililít đến dưới 250 mililít;\n\nn) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm e đến điểm m khoản này;\n\no) Tái phạm nguy hiểm.",
+        "doc_id": "blhs-dieu-249"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:174",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 3,
+        "penalty": "phạt tù từ 10 năm đến 15 năm",
+        "id": "Điều 249 BLHS khoản 3",
+        "text": "3. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 10 năm đến 15 năm:\n\na) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng từ 01 kilôgam đến dưới 05 kilôgam;\n\nb) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng từ 30 gam đến dưới 100 gam;\n\nc) Lá cây côca; lá khát (lá cây Catha edulis); lá, rễ, thân, cành, hoa, quả của cây cần sa hoặc bộ phận của cây khác có chứa chất ma túy do Chính phủ quy định có khối lượng từ 25 kilôgam đến dưới 75 kilôgam;\n\nd) Quả thuốc phiện khô có khối lượng từ 200 kilôgam đến dưới 600 kilôgam;\n\nđ) Quả thuốc phiện tươi có khối lượng tù 50 kilôgam đến dưới 150 kilôgam;\n\ne) Các chất ma túy khác ở thể rắn có khối lượng từ 100 gam đến dưới 300 gam;\n\ng) Các chất ma túy khác ở thể lỏng có thể tích từ 250 mililít đến dưới 750 mililít;\n\nh) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm a đến điểm g khoản này.",
+        "doc_id": "blhs-dieu-249"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:175",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 4,
+        "penalty": "phạt tù từ 15 năm đến 20 năm hoặc tù chung thân",
+        "id": "Điều 249 BLHS khoản 4",
+        "text": "4. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 15 năm đến 20 năm hoặc tù chung thân:\n\na) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng 05 kilôgam trở lên;\n\nb) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng 100 gam trở lên;\n\nc) Lá cây côca; lá khát (lá cây Catha edulis); lá, rễ, thân, cành, hoa, quả của cây cần sa hoặc bộ phận của cây khác có chứa chất ma túy do Chính phủ quy định có khối lượng 75 kilôgam trở lên;\n\nd) Quả thuốc phiện khô có khối lượng 600 kilôgam trở lên;\n\nđ) Quả thuốc phiện tươi có khối lượng 150 kilôgam trở lên;\n\ne) Các chất ma túy khác ở thể rắn có khối lượng 300 gam trở lên;\n\ng) Các chất ma túy khác ở thể lỏng có thể tích 750 mililít trở lên;\n\nh) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm a đến điểm g khoản này.",
+        "doc_id": "blhs-dieu-249"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:176",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 5,
+        "penalty": "phạt tiền từ 5.000.000 đồng đến 500.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản",
+        "id": "Điều 249 BLHS khoản 5",
+        "text": "5. Người phạm tội còn có thể bị phạt tiền từ 5.000.000 đồng đến 500.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản.",
+        "doc_id": "blhs-dieu-249"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:177",
+      "labels": [
+        "Article"
+      ],
+      "properties": {
+        "law": "BLHS",
+        "id": "Điều 250 BLHS",
+        "title": "Tội vận chuyển trái phép chất ma túy",
+        "doc_id": "blhs-dieu-250"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:178",
+      "labels": [
+        "Crime"
+      ],
+      "properties": {
+        "name": "vận chuyển trái phép chất ma túy"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:179",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 1,
+        "penalty": "phạt tù từ 02 năm đến 07 năm",
+        "id": "Điều 250 BLHS khoản 1",
+        "text": "1. Người nào vận chuyển trái phép chất ma túy mà không nhằm mục đích sản xuất, mua bán, tàng trữ trái phép chất ma túy thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 02 năm đến 07 năm:\n\na) Đã bị xử phạt vi phạm hành chính về hành vi quy định tại Điều này hoặc đã bị kết án về tội này hoặc một trong các tội quy định tại các điều 248, 249, 251 và 252 của Bộ luật này, chưa được xóa án tích mà còn vi phạm;\n\nb) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng từ 01 gam đến dưới 500 gam;\n\nc) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng từ 0,1 gam đến dưới 05 gam;\n\nd) Lá cây côca; lá khát (lá cây Catha edulis); lá, rễ, thân, cành, hoa, quả của cây cần sa hoặc bộ phận của cây khác có chứa chất ma túy do Chính phủ quy định có khối lượng từ 01 kilôgam đến dưới 10 kilôgam;\n\nđ) Quả thuốc phiện khô có khối lượng từ 05 kilôgam đến dưới 50 kilôgam;\n\ne) Quả thuốc phiện tươi có khối lượng từ 01 kilôgam đến dưới 10 kilôgam;\n\ng) Các chất ma túy khác ở thể rắn có khối lượng từ 01 gam đến dưới 20 gam;\n\nh) Các chất ma túy khác ở thể lỏng có thể tích từ 10 mililít đến dưới 100 mililít;\n\ni) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm b đến điểm h khoản này.",
+        "doc_id": "blhs-dieu-250"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:18",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Kim Yu Young",
+        "doc_id": "news-100260920221957595"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:180",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 2,
+        "penalty": "phạt tù từ 07 năm đến 15 năm",
+        "id": "Điều 250 BLHS khoản 2",
+        "text": "2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 07 năm đến 15 năm:\n\na) Có tổ chức;\n\nb) Phạm tội 02 lần trở lên;\n\nc) Lợi dụng chức vụ, quyền hạn;\n\nd) Lợi dụng danh nghĩa cơ quan, tổ chức;\n\nđ) Sử dụng người dưới 16 tuổi vào việc phạm tội;\n\ne) Qua biên giới;\n\ng) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng từ 500 gam đến dưới 01 kilôgam;\n\nh) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng từ 05 gam đến dưới 30 gam;\n\ni) Lá cây côca; lá khát (lá cây Catha edulis); lá, rễ, thân, cành, hoa, quả của cây cần sa hoặc bộ phận của cây khác có chứa chất ma túy do Chính phủ quy định có khối lượng từ 10 kilôgam đến dưới 25 kilôgam;\n\nk) Quả thuốc phiện khô có khối lượng từ 50 kilôgam đến dưới 200 kilôgam;\n\nl) Quả thuốc phiện tươi có khối lượng từ 10 kilôgam đến dưới 50 kilôgam;\n\nm) Các chất ma túy khác ở thể rắn có khối lượng từ 20 gam đến dưới 100 gam;\n\nn) Các chất ma túy khác ở thể lỏng có thể tích từ 100 mililít đến dưới 250 mililít;\n\no) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm g đến điểm n khoản này;\n\np) Tái phạm nguy hiểm.",
+        "doc_id": "blhs-dieu-250"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:181",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 3,
+        "penalty": "phạt tù từ 15 năm đến 20 năm",
+        "id": "Điều 250 BLHS khoản 3",
+        "text": "3. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 15 năm đến 20 năm:\n\na) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng từ 01 kilôgam đến dưới 05 kilôgam;\n\nb) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng từ 30 gam đến dưới 100 gam;\n\nc) Lá cây côca; lá khát (lá cây Catha edulis); lá, rễ, thân, cành, hoa, quả của cây cần sa hoặc bộ phận của cây khác có chứa chất ma túy do Chính phủ quy định có khối lượng từ 25 kilôgam đến dưới 75 kilôgam;\n\nd) Quả thuốc phiện khô có khối lượng từ 200 kilôgam đến dưới 600 kilôgam;\n\nđ) Quả thuốc phiện tươi có khối lượng từ 50 kilôgam đến dưới 150 kilôgam;\n\ne) Các chất ma túy khác ở thể rắn có khối lượng từ 100 gam đến dưới 300 gam;\n\ng) Các chất ma túy khác ở thể lỏng có thể tích từ 250 mililít đến dưới 750 mililít;\n\nh) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm a đến điểm g khoản này.",
+        "doc_id": "blhs-dieu-250"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:182",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 4,
+        "penalty": "phạt tù 20 năm, tù chung thân hoặc tử hình",
+        "id": "Điều 250 BLHS khoản 4",
+        "text": "4. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù 20 năm, tù chung thân hoặc tử hình:\n\na) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng 05 kilôgam trở lên;\n\nb) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng 100 gam trở lên;\n\nc) Lá cây côca; lá khát (lá cây Catha edulis); lá, rễ, thân, cành, hoa, quả của cây cần sa hoặc bộ phận của cây khác có chứa chất ma túy do Chính phủ quy định có khối lượng 75 kilôgam trở lên;\n\nd) Quả thuốc phiện khô có khối lượng 600 kilôgam trở lên;\n\nđ) Quả thuốc phiện tươi có khối lượng 150 kilôgam trở lên;\n\ne) Các chất ma túy khác ở thể rắn có khối lượng 300 gam trở lên;\n\ng) Các chất ma túy khác ở thể lỏng có thể tích 750 mililít trở lên;\n\nh) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm a đến điểm g khoản này.",
+        "doc_id": "blhs-dieu-250"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:183",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 5,
+        "penalty": "phạt tiền từ 5.000.000 đồng đến 500.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản",
+        "id": "Điều 250 BLHS khoản 5",
+        "text": "5. Người phạm tội còn có thể bị phạt tiền từ 5.000.000 đồng đến 500.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản.",
+        "doc_id": "blhs-dieu-250"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:184",
+      "labels": [
+        "Article"
+      ],
+      "properties": {
+        "law": "BLHS",
+        "id": "Điều 251 BLHS",
+        "title": "Tội mua bán trái phép chất ma túy",
+        "doc_id": "blhs-dieu-251"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:185",
+      "labels": [
+        "Crime"
+      ],
+      "properties": {
+        "name": "mua bán trái phép chất ma túy"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:186",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 1,
+        "penalty": "phạt tù từ 02 năm đến 07 năm",
+        "id": "Điều 251 BLHS khoản 1",
+        "text": "1. Người nào mua bán trái phép chất ma túy, thì bị phạt tù từ 02 năm đến 07 năm.",
+        "doc_id": "blhs-dieu-251"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:187",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 2,
+        "penalty": "phạt tù từ 07 năm đến 15 năm",
+        "id": "Điều 251 BLHS khoản 2",
+        "text": "2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 07 năm đến 15 năm:\n\na) Có tổ chức;\n\nb) Phạm tội 02 lần trở lên;\n\nc) Đối với 02 người trở lên;\n\nd) Lợi dụng chức vụ, quyền hạn;\n\nđ) Lợi dụng danh nghĩa cơ quan, tổ chức;\n\ne) Sử dụng người dưới 16 tuổi vào việc phạm tội hoặc bán ma túy cho người dưới 16 tuổi;\n\ng) Qua biên giới;\n\nh) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng từ 500 gam đến dưới 01 kilôgam;\n\ni) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng từ 05 gam đến dưới 30 gam;\n\nk) Lá cây côca; lá khát (lá cây Catha edulis); lá, rễ, thân, cành, hoa, quả của cây cần sa hoặc bộ phận của cây khác có chứa chất ma túy do Chính phủ quy định có khối lượng từ 10 kilôgam đến dưới 25 kilôgam;\n\nl) Quả thuốc phiện khô có khối lượng từ 50 kilôgam đến dưới 200 kilôgam;\n\nm) Quả thuốc phiện tươi có khối lượng từ 10 kilôgam đến dưới 50 kilôgam;\n\nn) Các chất ma túy khác ở thể rắn có khối lượng từ 20 gam đến dưới 100 gam;\n\no) Các chất ma túy khác ở thể lỏng có thể tích từ 100 mililít đến dưới 250 mililít;\n\np) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm h đến điểm o khoản này;\n\nq) Tái phạm nguy hiểm.",
+        "doc_id": "blhs-dieu-251"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:188",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 3,
+        "penalty": "phạt tù từ 15 năm đến 20 năm",
+        "id": "Điều 251 BLHS khoản 3",
+        "text": "3. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 15 năm đến 20 năm:\n\na) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng từ 01 kilôgam đến dưới 05 kilôgam;\n\nb) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng từ 30 gam đến dưới 100 gam;\n\nc) Lá cây côca; lá khát (lá cây Catha edulis); lá, rễ, thân, cành, hoa, quả của cây cần sa hoặc bộ phận của cây khác có chứa chất ma túy do Chính phủ quy định có khối lượng từ 25 kilôgam đến dưới 75 kilôgam;\n\nd) Quả thuốc phiện khô có khối lượng từ 200 kilôgam đến dưới 600 kilôgam;\n\nđ) Quả thuốc phiện tươi có khối lượng từ 50 kilôgam đến dưới 150 kilôgam;\n\ne) Các chất ma túy khác ở thể rắn có khối lượng từ 100 gam đến dưới 300 gam;\n\ng) Các chất ma túy khác ở thể lỏng có thể tích từ 250 mililít đến dưới 750 mililít;\n\nh) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm a đến điểm g khoản này.",
+        "doc_id": "blhs-dieu-251"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:189",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 4,
+        "penalty": "phạt tù 20 năm, tù chung thân hoặc tử hình",
+        "id": "Điều 251 BLHS khoản 4",
+        "text": "4. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù 20 năm, tù chung thân hoặc tử hình:\n\na) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng 05 kilôgam trở lên;\n\nb) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng 100 gam trở lên;\n\nc) Lá cây côca; lá khát (lá cây Catha edulis); lá, rễ, thân, cành, hoa, quả của cây cần sa hoặc bộ phận của cây khác có chứa chất ma túy do Chính phủ quy định có khối lượng 75 kilôgam trở lên;\n\nd) Quả thuốc phiện khô có khối lượng 600 kilôgam trở lên;\n\nđ) Quả thuốc phiện tươi có khối lượng 150 kilôgam trở lên;\n\ne) Các chất ma túy khác ở thể rắn có khối lượng 300 gam trở lên;\n\ng) Các chất ma túy khác ở thể lỏng có thể tích 750 mililít trở lên;\n\nh) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm a đến điểm g khoản này.",
+        "doc_id": "blhs-dieu-251"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:19",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Phạm Phương Anh",
+        "doc_id": "news-100260920221957595"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:190",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 5,
+        "penalty": "phạt tiền từ 5.000.000 đồng đến 500.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản",
+        "id": "Điều 251 BLHS khoản 5",
+        "text": "5. Người phạm tội còn có thể bị phạt tiền từ 5.000.000 đồng đến 500.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản.",
+        "doc_id": "blhs-dieu-251"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:191",
+      "labels": [
+        "Article"
+      ],
+      "properties": {
+        "law": "BLHS",
+        "id": "Điều 252 BLHS",
+        "title": "Tội chiếm đoạt chất ma túy",
+        "doc_id": "blhs-dieu-252"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:192",
+      "labels": [
+        "Crime"
+      ],
+      "properties": {
+        "name": "chiếm đoạt chất ma túy"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:193",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 1,
+        "penalty": "phạt tù từ 01 năm đến 05 năm",
+        "id": "Điều 252 BLHS khoản 1",
+        "text": "1. Người nào chiếm đoạt chất ma túy dưới bất kỳ hình thức nào thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 01 năm đến 05 năm:\n\na) Đã bị xử phạt vi phạm hành chính về hành vi quy định tại Điều này hoặc đã bị kết án về tội này hoặc một trong các tội quy định tại các điều 248, 249, 250 và 251 của Bộ luật này, chưa được xóa án tích mà còn vi phạm;\n\nb) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng từ 01 gam đến dưới 500 gam;\n\nc) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng từ 0,1 gam đến dưới 05 gam;\n\nd) Lá cây côca; lá khát (lá cây Catha edulis); lá, rễ, thân, cành, hoa, quả của cây cần sa hoặc bộ phận của cây khác có chứa chất ma túy do Chính phủ quy định có khối lượng từ 01 kilôgam đến dưới 10 kilôgam;\n\nđ) Quả thuốc phiện khô có khối lượng từ 05 kilôgam đến dưới 50 kilôgam;\n\ne) Quả thuốc phiện tươi có khối lượng từ 01 kilôgam đến dưới 10 kilôgam;\n\ng) Các chất ma túy khác ở thể rắn có khối lượng từ 01 gam đến dưới 20 gam;\n\nh) Các chất ma túy khác ở thể lỏng có thể tích từ 10 mililít đến dưới 100 mililít;\n\ni) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm b đến điểm h khoản này.",
+        "doc_id": "blhs-dieu-252"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:194",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 2,
+        "penalty": "phạt tù từ 05 năm đến 10 năm",
+        "id": "Điều 252 BLHS khoản 2",
+        "text": "2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 05 năm đến 10 năm:\n\na) Có tổ chức;\n\nb) Phạm tội 02 lần trở lên;\n\nc) Lợi dụng chức vụ, quyền hạn;\n\nd) Lợi dụng danh nghĩa cơ quan, tổ chức;\n\nđ) Sử dụng người dưới 16 tuổi vào việc phạm tội;\n\ne) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng từ 500 gam đến dưới 01 kilôgam;\n\ng) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng từ 05 gam đến dưới 30 gam;\n\nh) Lá cây côca; lá khát (lá cây Catha edulis); lá, rễ, thân, cành, hoa, quả của cây cần sa hoặc bộ phận của cây khác có chứa chất ma túy do Chính phủ quy định có khối lượng từ 10 kilôgam đến dưới 25 kilôgam;\n\ni) Quả thuốc phiện khô có khối lượng từ 50 kilôgam đến dưới 200 kilôgam;\n\nk) Quả thuốc phiện tươi có khối lượng từ 10 kilôgam đến dưới 50 kilôgam;\n\nl) Các chất ma túy khác ở thể rắn có khối lượng từ 20 gam đến dưới 100 gam;\n\nm) Các chất ma túy khác ở thể lỏng có thể tích từ 100 mililít đến dưới 250 mililít;\n\nn) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm e đến điểm m khoản này;\n\no) Tái phạm nguy hiểm.",
+        "doc_id": "blhs-dieu-252"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:195",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 3,
+        "penalty": "phạt tù từ 10 năm đến 15 năm",
+        "id": "Điều 252 BLHS khoản 3",
+        "text": "3. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 10 năm đến 15 năm:\n\na) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng từ 01 kilôgam đến dưới 05 kilôgam;\n\nb) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng từ 30 gam đến dưới 100 gam;\n\nc) Lá cây côca; lá khát (lá cây Catha edulis); lá, rễ, thân, cành, hoa, quả của cây cần sa hoặc bộ phận của cây khác có chứa chất ma túy do Chính phủ quy định có khối lượng từ 25 kilôgam đến dưới 75 kilôgam;\n\nd) Quả thuốc phiện khô có khối lượng từ 200 kilôgam đến dưới 600 kilôgam;\n\nđ) Quả thuốc phiện tươi có khối lượng từ 50 kilôgam đến dưới 150 kilôgam;\n\ne) Các chất ma túy khác ở thể rắn có khối lượng từ 100 gam đến dưới 300 gam;\n\ng) Các chất ma túy khác ở thể lỏng có thể tích từ 250 mililít đến dưới 750 mililít;\n\nh) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm a đến điểm g khoản này.",
+        "doc_id": "blhs-dieu-252"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:196",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 4,
+        "penalty": "phạt tù từ 15 năm đến 20 năm hoặc tù chung thân",
+        "id": "Điều 252 BLHS khoản 4",
+        "text": "4. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 15 năm đến 20 năm hoặc tù chung thân:\n\na) Nhựa thuốc phiện, nhựa cần sa hoặc cao côca có khối lượng 05 kilôgam trở lên;\n\nb) Heroine, Cocaine, Methamphetamine, Amphetamine, MDMA hoặc XLR-11 có khối lượng 100 gam trở lên;\n\nc) Lá cây côca; lá khát (lá cây Catha edulis); lá, rễ, thân, cành, hoa, quả của cây cần sa hoặc bộ phận của cây khác có chứa chất ma túy do Chính phủ quy định có khối lượng 75 kilôgam trở lên;\n\nd) Quả thuốc phiện khô có khối lượng 600 kilôgam trở lên;\n\nđ) Quả thuốc phiện tươi có khối lượng 150 kilôgam trở lên;\n\ne) Các chất ma túy khác ở thể rắn có khối lượng 300 gam trở lên;\n\ng) Các chất ma túy khác ở thể lỏng có thể tích 750 mililít trở lên;\n\nh) Có 02 chất ma túy trở lên mà tổng khối lượng hoặc thể tích của các chất đó tương đương với khối lượng hoặc thể tích chất ma túy quy định tại một trong các điểm từ điểm a đến điểm g khoản này.",
+        "doc_id": "blhs-dieu-252"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:197",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 5,
+        "penalty": "phạt tiền từ 5.000.000 đồng đến 500.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản",
+        "id": "Điều 252 BLHS khoản 5",
+        "text": "5. Người phạm tội còn có thể bị phạt tiền từ 5.000.000 đồng đến 500.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản.",
+        "doc_id": "blhs-dieu-252"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:198",
+      "labels": [
+        "Article"
+      ],
+      "properties": {
+        "law": "BLHS",
+        "id": "Điều 253 BLHS",
+        "title": "Tội tàng trữ, vận chuyển, mua bán hoặc chiếm đoạt tiền chất dùng vào việc sản xuất trái phép chất ma túy",
+        "doc_id": "blhs-dieu-253"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:199",
+      "labels": [
+        "Crime"
+      ],
+      "properties": {
+        "name": "tàng trữ, vận chuyển, mua bán hoặc chiếm đoạt tiền chất dùng vào việc sản xuất trái phép chất ma túy"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:2",
+      "labels": [
+        "Substance"
+      ],
+      "properties": {
+        "name": "Ketamine"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:20",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Phạm Tài Vình",
+        "doc_id": "news-100260920221957595"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:200",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 1,
+        "penalty": "phạt tù từ 01 năm đến 06 năm",
+        "id": "Điều 253 BLHS khoản 1",
+        "text": "1. Người nào tàng trữ, vận chuyển, mua bán hoặc chiếm đoạt tiền chất dùng vào việc sản xuất trái phép chất ma túy thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 01 năm đến 06 năm:\n\na) Đã bị xử phạt vi phạm hành chính về một trong các hành vi quy định tại Điều này hoặc đã bị kết án về tội này, chưa được xóa án tích mà còn vi phạm;\n\nb) Tiền chất ở thể rắn có khối lượng từ 50 gam đến dưới 200 gam;\n\nc) Tiền chất ở thể lỏng có thể tích từ 75 mililít đến dưới 300 mililít.",
+        "doc_id": "blhs-dieu-253"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:201",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 2,
+        "penalty": "phạt tù từ 06 năm đến 13 năm",
+        "id": "Điều 253 BLHS khoản 2",
+        "text": "2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 06 năm đến 13 năm:\n\na) Có tổ chức;\n\nb) Phạm tội 02 lần trở lên;\n\nc) Lợi dụng chức vụ, quyền hạn;\n\nd) Lợi dụng danh nghĩa Cơ quan, tổ chức;\n\nđ) Tiền chất ở thể rắn có khối lượng từ 200 gam đến dưới 500 gam;\n\ne) Tiền chất ở thể lỏng có thể tích từ 300 mililít đến dưới 750 mililít;\n\ng) Sử dụng người dưới 16 tuổi vào việc phạm tội;\n\nh) Vận chuyển, mua bán qua biên giới;\n\ni) Tái phạm nguy hiểm.",
+        "doc_id": "blhs-dieu-253"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:202",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 3,
+        "penalty": "phạt tù từ 13 năm đến 20 năm",
+        "id": "Điều 253 BLHS khoản 3",
+        "text": "3. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 13 năm đến 20 năm:\n\na) Tiền chất ở thể rắn có khối lượng từ 500 gam đến dưới 1.200 gam;\n\nb) Tiền chất ở thể lỏng có thể tích từ 750 mililít đến dưới 1.800 mililít.",
+        "doc_id": "blhs-dieu-253"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:203",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 4,
+        "penalty": "phạt tù 20 năm hoặc tù chung thân",
+        "id": "Điều 253 BLHS khoản 4",
+        "text": "4. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù 20 năm hoặc tù chung thân:\n\na) Tiền chất ở thể rắn có khối lượng 1.200 gam trở lên;\n\nb) Tiền chất ở thể lỏng có thể tích 1.800 mililít trở lên.",
+        "doc_id": "blhs-dieu-253"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:204",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 5,
+        "penalty": "",
+        "id": "Điều 253 BLHS khoản 5",
+        "text": "5. Trường hợp phạm tội có cả tiền chất ở thể rắn và tiền chất ở thể lỏng thì được quy đổi để làm căn cứ truy cứu trách nhiệm hình sự, với tỷ lệ 01 gam tiền chất ở thể rắn tương đương với 1,5 mililít tiền chất ở thể lỏng. Sau khi quy đổi, số lượng tiền chất thuộc khoản nào, thì người thực hiện hành vi phạm tội bị truy cứu trách nhiệm hình sự theo khoản đó.",
+        "doc_id": "blhs-dieu-253"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:205",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 6,
+        "penalty": "phạt tiền từ 5.000.000 đồng đến 50.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản",
+        "id": "Điều 253 BLHS khoản 6",
+        "text": "6. Người phạm tội còn có thể bị phạt tiền từ 5.000.000 đồng đến 50.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản.",
+        "doc_id": "blhs-dieu-253"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:206",
+      "labels": [
+        "Article"
+      ],
+      "properties": {
+        "law": "BLHS",
+        "id": "Điều 254 BLHS",
+        "title": "Tội sản xuất, tàng trữ, vận chuyển hoặc mua bán phương tiện, dụng cụ dùng vào việc sản xuất hoặc sử dụng trái phép chất ma túy",
+        "doc_id": "blhs-dieu-254"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:207",
+      "labels": [
+        "Crime"
+      ],
+      "properties": {
+        "name": "sản xuất, tàng trữ, vận chuyển hoặc mua bán phương tiện, dụng cụ dùng vào việc sản xuất hoặc sử dụng trái phép chất ma túy"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:208",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 1,
+        "penalty": "phạt tù từ 01 năm đến 05 năm",
+        "id": "Điều 254 BLHS khoản 1",
+        "text": "1. Người nào sản xuất, tàng trữ, vận chuyển hoặc mua bán phương tiện, dụng cụ dùng vào việc sản xuất hoặc sử dụng trái phép chất ma túy thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 01 năm đến 05 năm:\n\na) Đã bị xử phạt vi phạm hành chính về một trong các hành vi này hoặc đã bị kết án về tội này, chưa được xóa án tích mà còn vi phạm;\n\nb) Có số lượng từ 06 đơn vị đến 19 đơn vị dụng cụ, phương tiện cùng loại hoặc khác loại.",
+        "doc_id": "blhs-dieu-254"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:209",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 2,
+        "penalty": "phạt tù từ 05 năm đến 10 năm",
+        "id": "Điều 254 BLHS khoản 2",
+        "text": "2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 05 năm đến 10 năm:\n\na) Có tổ chức;\n\nb) Phạm tội 02 lần trở lên;\n\nc) Lợi dụng chức vụ, quyền hạn;\n\nd) Lợi dụng danh nghĩa cơ quan, tổ chức;\n\nđ) Có số lượng 20 đơn vị dụng cụ, phương tiện cùng loại hoặc khác loại trở lên;\n\ne) Vận chuyển, mua bán qua biên giới;\n\ng) Sử dụng người dưới 16 tuổi vào việc phạm tội;\n\nh) Tái phạm nguy hiểm.",
+        "doc_id": "blhs-dieu-254"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:21",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Lê Đăng Khoa",
+        "doc_id": "news-100260920221957595"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:210",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 3,
+        "penalty": "phạt tiền từ 5.000.000 đồng đến 500.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản",
+        "id": "Điều 254 BLHS khoản 3",
+        "text": "3. Người phạm tội còn có thể bị phạt tiền từ 5.000.000 đồng đến 500.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản.",
+        "doc_id": "blhs-dieu-254"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:211",
+      "labels": [
+        "Article"
+      ],
+      "properties": {
+        "law": "BLHS",
+        "id": "Điều 255 BLHS",
+        "title": "Tội tổ chức sử dụng trái phép chất ma túy",
+        "doc_id": "blhs-dieu-255"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:212",
+      "labels": [
+        "Crime"
+      ],
+      "properties": {
+        "name": "tổ chức sử dụng trái phép chất ma túy"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:213",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 1,
+        "penalty": "phạt tù từ 02 năm đến 07 năm",
+        "id": "Điều 255 BLHS khoản 1",
+        "text": "1. Người nào tổ chức sử dụng trái phép chất ma túy dưới bất kỳ hình thức nào, thì bị phạt tù từ 02 năm đến 07 năm.",
+        "doc_id": "blhs-dieu-255"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:214",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 2,
+        "penalty": "phạt tù từ 07 năm đến 15 năm",
+        "id": "Điều 255 BLHS khoản 2",
+        "text": "2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 07 năm đến 15 năm:\n\na) Phạm tội 02 lần trở lên;\n\nb) Đối với 02 người trở lên;\n\nc) Đối với người từ đủ 13 tuổi đến dưới 18 tuổi;\n\nd) Đối với phụ nữ mà biết là có thai;\n\nđ) Đối với người đang cai nghiện;\n\ne) Gây tổn hại cho sức khỏe của người khác mà tỷ lệ tổn thương cơ thể từ 31% đến 60%;\n\ng) Gây bệnh nguy hiểm cho người khác;\n\nh) Tái phạm nguy hiểm.",
+        "doc_id": "blhs-dieu-255"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:215",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 3,
+        "penalty": "phạt tù từ 15 năm đến 20 năm",
+        "id": "Điều 255 BLHS khoản 3",
+        "text": "3. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 15 năm đến 20 năm:\n\na) Gây tổn hại cho sức khỏe của người khác mà tỷ lệ tổn thương cơ thể từ 61% trở lên hoặc gây chết người;\n\nb) Gây tổn hại cho sức khỏe của 02 người trở lên mà tỷ lệ tổn thương cơ thể của mỗi người từ 31% đến 60%;\n\nc) Gây bệnh nguy hiểm cho 02 người trở lên;\n\nd) Đối với người dưới 13 tuổi.",
+        "doc_id": "blhs-dieu-255"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:216",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 4,
+        "penalty": "phạt tù 20 năm hoặc tù chung thân",
+        "id": "Điều 255 BLHS khoản 4",
+        "text": "4. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù 20 năm hoặc tù chung thân:\n\na) Gây tổn hại cho sức khỏe của 02 người trở lên mà tỷ lệ tổn thương cơ thể của mỗi người 61% trở lên;\n\nb) Làm chết 02 người trở lên.",
+        "doc_id": "blhs-dieu-255"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:217",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 5,
+        "penalty": "phạt tiền từ 50.000.000 đồng đến 500.000.000 đồng, phạt quản chế, cấm cư trú từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản",
+        "id": "Điều 255 BLHS khoản 5",
+        "text": "5. Người phạm tội còn có thể bị phạt tiền từ 50.000.000 đồng đến 500.000.000 đồng, phạt quản chế, cấm cư trú từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản.",
+        "doc_id": "blhs-dieu-255"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:218",
+      "labels": [
+        "Article"
+      ],
+      "properties": {
+        "law": "BLHS",
+        "id": "Điều 256 BLHS",
+        "title": "Tội chứa chấp việc sử dụng trái phép chất ma túy",
+        "doc_id": "blhs-dieu-256"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:219",
+      "labels": [
+        "Crime"
+      ],
+      "properties": {
+        "name": "chứa chấp việc sử dụng trái phép chất ma túy"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:22",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Giang Quốc Khánh",
+        "doc_id": "news-100260920221957595"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:220",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 1,
+        "penalty": "phạt tù từ 02 năm đến 07 năm",
+        "id": "Điều 256 BLHS khoản 1",
+        "text": "1. Người nào cho thuê, cho mượn địa điểm hoặc có bất kỳ hành vi nào khác chứa chấp việc sử dụng trái phép chất ma túy, nếu không thuộc trường hợp quy định tại Điều 255 của Bộ luật này, thì bị phạt tù từ 02 năm đến 07 năm.",
+        "doc_id": "blhs-dieu-256"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:221",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 2,
+        "penalty": "phạt tù từ 07 năm đến 15 năm",
+        "id": "Điều 256 BLHS khoản 2",
+        "text": "2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 07 năm đến 15 năm:\n\na) Lợi dụng chức vụ, quyền hạn;\n\nb) Phạm tội 02 lần trở lên;\n\nc) Đối với người dưới 16 tuổi;\n\nd) Đối với 02 người trở lên;\n\nđ) Tái phạm nguy hiểm.",
+        "doc_id": "blhs-dieu-256"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:222",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 3,
+        "penalty": "phạt tiền từ 50.000.000 đồng đến 200.000.000 đồng hoặc tịch thu một phần hoặc toàn bộ tài sản",
+        "id": "Điều 256 BLHS khoản 3",
+        "text": "3. Người phạm tội còn có thể bị phạt tiền từ 50.000.000 đồng đến 200.000.000 đồng hoặc tịch thu một phần hoặc toàn bộ tài sản.",
+        "doc_id": "blhs-dieu-256"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:223",
+      "labels": [
+        "Article"
+      ],
+      "properties": {
+        "law": "BLHS",
+        "id": "Điều 257 BLHS",
+        "title": "Tội cưỡng bức người khác sử dụng trái phép chất ma túy",
+        "doc_id": "blhs-dieu-257"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:224",
+      "labels": [
+        "Crime"
+      ],
+      "properties": {
+        "name": "cưỡng bức người khác sử dụng trái phép chất ma túy"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:225",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 1,
+        "penalty": "phạt tù từ 02 năm đến 07 năm",
+        "id": "Điều 257 BLHS khoản 1",
+        "text": "1. Người nào dùng vũ lực, đe dọa dùng vũ lực hoặc dùng thủ đoạn khác uy hiếp tinh thần của người khác để buộc họ phải sử dụng trái phép chất ma túy trái với ý muốn của họ, thì bị phạt tù từ 02 năm đến 07 năm.",
+        "doc_id": "blhs-dieu-257"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:226",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 2,
+        "penalty": "phạt tù từ 07 năm đến 15 năm",
+        "id": "Điều 257 BLHS khoản 2",
+        "text": "2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 07 năm đến 15 năm:\n\na) Có tổ chức;\n\nb) Phạm tội 02 lần trở lên;\n\nc) Vì động cơ đê hèn hoặc vì tư lợi;\n\nd) Đối với người từ đủ 13 tuổi đến dưới 18 tuổi;\n\nđ) Đối với phụ nữ mà biết là có thai;\n\ne) Đối với 02 người trở lên;\n\ng) Đối với người đang cai nghiện;\n\nh) Gây tổn hại cho sức khỏe của người khác mà tỷ lệ tổn thương cơ thể từ 31% đến 60%;\n\ni) Gây bệnh nguy hiểm cho người khác;\n\nk) Tái phạm nguy hiểm.",
+        "doc_id": "blhs-dieu-257"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:227",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 3,
+        "penalty": "phạt tù từ 15 năm đến 20 năm",
+        "id": "Điều 257 BLHS khoản 3",
+        "text": "3. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 15 năm đến 20 năm:\n\na) Gây tổn hại cho sức khỏe của người khác mà tỷ lệ tổn thương cơ thể từ 61% trở lên hoặc gây chết người;\n\nb) Gây bệnh nguy hiểm cho 02 người trở lên;\n\nc) Đối với người dưới 13 tuổi.",
+        "doc_id": "blhs-dieu-257"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:228",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 4,
+        "penalty": "phạt tù 20 năm hoặc tù chung thân",
+        "id": "Điều 257 BLHS khoản 4",
+        "text": "4. Phạm tội trong trường hợp làm chết 02 người trở lên, thì bị phạt tù 20 năm hoặc tù chung thân.",
+        "doc_id": "blhs-dieu-257"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:229",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 5,
+        "penalty": "phạt tiền từ 5.000.000 đồng đến 100.000.000 đồng",
+        "id": "Điều 257 BLHS khoản 5",
+        "text": "5. Người phạm tội còn có thể bị phạt tiền từ 5.000.000 đồng đến 100.000.000 đồng.",
+        "doc_id": "blhs-dieu-257"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:23",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Phạm Minh Sang",
+        "doc_id": "news-100260920221957595"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:230",
+      "labels": [
+        "Article"
+      ],
+      "properties": {
+        "law": "BLHS",
+        "id": "Điều 258 BLHS",
+        "title": "Tội lôi kéo người khác sử dụng trái phép chất ma túy",
+        "doc_id": "blhs-dieu-258"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:231",
+      "labels": [
+        "Crime"
+      ],
+      "properties": {
+        "name": "lôi kéo người khác sử dụng trái phép chất ma túy"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:232",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 1,
+        "penalty": "phạt tù từ 01 năm đến 05 năm",
+        "id": "Điều 258 BLHS khoản 1",
+        "text": "1. Người nào rủ rê, dụ dỗ, xúi giục hoặc bằng các thủ đoạn khác nhằm lôi kéo người khác sử dụng trái phép chất ma túy, thì bị phạt tù từ 01 năm đến 05 năm.",
+        "doc_id": "blhs-dieu-258"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:233",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 2,
+        "penalty": "phạt tù từ 05 năm đến 10 năm",
+        "id": "Điều 258 BLHS khoản 2",
+        "text": "2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 05 năm đến 10 năm:\n\na) Có tổ chức;\n\nb) Phạm tội 02 lần trở lên;\n\nc) Vì động cơ đê hèn hoặc vì tư lợi;\n\nd) Đối với người từ đủ 13 tuổi đến dưới 18 tuổi;\n\nđ) Đối với phụ nữ mà biết là có thai;\n\ne) Đối với 02 người trở lên;\n\ng) Đối với người đang cai nghiện;\n\nh) Gây tổn hại cho sức khỏe của người khác mà tỷ lệ tổn thương cơ thể từ 31% đến 60%;\n\ni) Gây bệnh nguy hiểm cho người khác;\n\nk) Tái phạm nguy hiểm.",
+        "doc_id": "blhs-dieu-258"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:234",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 3,
+        "penalty": "phạt tù từ 10 năm đến 15 năm",
+        "id": "Điều 258 BLHS khoản 3",
+        "text": "3. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 10 năm đến 15 năm:\n\na) Gây tổn hại cho sức khỏe của người khác mà tỷ lệ tổn thương cơ thể 61% trở lên hoặc gây chết người;\n\nb) Gây bệnh nguy hiểm cho 02 người trở lên;\n\nc) Đối với người dưới 13 tuổi.",
+        "doc_id": "blhs-dieu-258"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:235",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 4,
+        "penalty": "phạt tù từ 15 năm đến 20 năm hoặc tù chung thân",
+        "id": "Điều 258 BLHS khoản 4",
+        "text": "4. Phạm tội trong trường hợp gây chết 02 người trở lên, thì bị phạt tù từ 15 năm đến 20 năm hoặc tù chung thân.",
+        "doc_id": "blhs-dieu-258"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:236",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 5,
+        "penalty": "phạt tiền từ 5.000.000 đồng đến 100.000.000 đồng",
+        "id": "Điều 258 BLHS khoản 5",
+        "text": "5. Người phạm tội còn có thể bị phạt tiền từ 5.000.000 đồng đến 100.000.000 đồng.",
+        "doc_id": "blhs-dieu-258"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:237",
+      "labels": [
+        "Article"
+      ],
+      "properties": {
+        "law": "BLHS",
+        "id": "Điều 259 BLHS",
+        "title": "Tội vi phạm quy định về quản lý chất ma túy, tiền chất, thuốc gây nghiện, thuốc hướng thần",
+        "doc_id": "blhs-dieu-259"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:238",
+      "labels": [
+        "Crime"
+      ],
+      "properties": {
+        "name": "vi phạm quy định về quản lý chất ma túy, tiền chất, thuốc gây nghiện, thuốc hướng thần"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:239",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 1,
+        "penalty": "phạt tiền từ 10.000.000 đồng đến 100.000.000 đồng hoặc phạt tù từ 01 năm đến 05 năm",
+        "id": "Điều 259 BLHS khoản 1",
+        "text": "1. Người nào có trách nhiệm trong quản lý chất ma túy, tiền chất, thuốc gây nghiện, thuốc hướng thần mà thực hiện một trong các hành vi sau đây, đã bị xử lý kỷ luật hoặc xử phạt vi phạm hành chính về một trong các hành vi quy định tại Điều này hoặc đã bị kết án về một trong các tội quy định tại Chương XX của Bộ luật này, chưa được xóa án tích mà còn vi phạm, thì bị phạt tiền từ 10.000.000 đồng đến 100.000.000 đồng hoặc phạt tù từ 01 năm đến 05 năm:\n\na) Vi phạm quy định về xuất khẩu, nhập khẩu, tạm nhập, tái xuất, quá cảnh chất ma túy, tiền chất, thuốc gây nghiện hoặc thuốc hướng thần;\n\nb) Vi phạm quy định về nghiên cứu, giám định, sản xuất, bảo quản chất ma túy, tiền chất, thuốc gây nghiện hoặc thuốc hướng thần;\n\nc) Vi phạm quy định về giao nhận, vận chuyển chất ma túy, tiền chất, thuốc gây nghiện hoặc thuốc hướng thần;\n\nd) Vi phạm quy định về phân phối, mua bán, trao đổi chất ma túy, tiền chất, thuốc gây nghiện hoặc thuốc hướng thần;\n\nđ) Vi phạm quy định về quản lý, kiểm soát, lưu giữ chất ma túy, tiền chất, thuốc gây nghiện hoặc thuốc hướng thần tại khu vực cửa khẩu, khu vực biên giới, trên biển;\n\ne) Vi phạm quy định về cấp phát, cho phép sử dụng chất ma túy, thuốc gây nghiện hoặc thuốc hướng thần.",
+        "doc_id": "blhs-dieu-259"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:24",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Nguyễn Thành Quốc",
+        "doc_id": "news-100260920221957595"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:240",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 2,
+        "penalty": "phạt tù từ 05 năm đến 10 năm",
+        "id": "Điều 259 BLHS khoản 2",
+        "text": "2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 05 năm đến 10 năm:\n\na) Có tổ chức;\n\nb) Phạm tội 02 lần trở lên;\n\nc) Tái phạm nguy hiểm.",
+        "doc_id": "blhs-dieu-259"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:241",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 3,
+        "penalty": "phạt tiền từ 10.000.000 đồng đến 50.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm",
+        "id": "Điều 259 BLHS khoản 3",
+        "text": "3. Người phạm tội còn có thể bị phạt tiền từ 10.000.000 đồng đến 50.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm.",
+        "doc_id": "blhs-dieu-259"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:242",
+      "labels": [
+        "Article"
+      ],
+      "properties": {
+        "law": "Luật PCMT",
+        "id": "Điều 1 Luật PCMT",
+        "title": "Phạm vi điều chỉnh",
+        "doc_id": "pcmt-dieu-1"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:243",
+      "labels": [
+        "Article"
+      ],
+      "properties": {
+        "law": "Luật PCMT",
+        "id": "Điều 2 Luật PCMT",
+        "title": "Giải thích từ ngữ",
+        "doc_id": "pcmt-dieu-2"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:244",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 1,
+        "penalty": "",
+        "text": "1. Chất ma túy là chất gây nghiện, chất hướng thần được quy định trong danh\nmục chất ma túy do Chính phủ ban hành.",
+        "id": "Điều 2 Luật PCMT khoản 1",
+        "doc_id": "pcmt-dieu-2"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:245",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 2,
+        "penalty": "",
+        "text": "2. Chất gây nghiện là chất kích thích hoặc ức chế thần kinh, dễ gây tình trạng\nnghiện đối với người sử dụng.",
+        "id": "Điều 2 Luật PCMT khoản 2",
+        "doc_id": "pcmt-dieu-2"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:246",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 3,
+        "penalty": "",
+        "text": "3. Chất hướng thần là chất kích thích hoặc ức chế thần kinh hoặc gây ảo giác,\nnếu sử dụng nhiều lần có thể dẫn tới tình trạng nghiện đối với người sử dụng.",
+        "id": "Điều 2 Luật PCMT khoản 3",
+        "doc_id": "pcmt-dieu-2"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:247",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 4,
+        "penalty": "",
+        "text": "4. Tiền chất là hóa chất không thể thiếu được trong quá trình điều chế, sản xuất\nchất ma túy được quy định trong danh mục tiền chất do Chính phủ ban hành.",
+        "id": "Điều 2 Luật PCMT khoản 4",
+        "doc_id": "pcmt-dieu-2"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:248",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 5,
+        "penalty": "",
+        "text": "5. Thuốc thú y có chứa chất ma túy, tiền chất là thuốc thú y có chứa các chất\nđược quy định tại các khoản 2, 3 và 4 của Điều này.",
+        "id": "Điều 2 Luật PCMT khoản 5",
+        "doc_id": "pcmt-dieu-2"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:249",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 6,
+        "penalty": "",
+        "text": "6. Cây có chứa chất ma túy là cây thuốc phiện, cây côca, cây cần sa và các loại\ncây khác có chứa chất ma túy do Chính phủ quy định.",
+        "id": "Điều 2 Luật PCMT khoản 6",
+        "doc_id": "pcmt-dieu-2"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:25",
+      "labels": [
+        "Case"
+      ],
+      "properties": {
+        "date": "2023-09-22",
+        "summary": "TikToker Phannhibeauty cùng 126 người khác bị bắt vì liên quan đến tổ chức sử dụng trái phép chất ma túy. Trong số đó có giang hồ 'Hoàng Nato'.",
+        "name": "Vụ tổ chức sử dụng trái phép chất ma túy liên quan đến TikToker Phannhibeauty",
+        "doc_id": "news-100260922111804786",
+        "source_title": "TikToker Phannhibeauty bị bắt vì sử dụng ma túy cùng giang hồ 'Hoàng Nato'"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:250",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 7,
+        "penalty": "",
+        "text": "7. Phòng, chống ma túy là phòng ngừa, ngăn chặn, đấu tranh chống tội phạm\nvà tệ nạn ma túy; kiểm soát các hoạt động hợp pháp liên quan đến ma túy.",
+        "id": "Điều 2 Luật PCMT khoản 7",
+        "doc_id": "pcmt-dieu-2"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:251",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 8,
+        "penalty": "",
+        "text": "8. Tệ nạn ma túy là việc sử dụng trái phép chất ma túy, nghiện ma túy và các\nhành vi vi phạm pháp luật về ma túy mà chưa đến mức hoặc không bị truy cứu\ntrách nhiệm hình sự.",
+        "id": "Điều 2 Luật PCMT khoản 8",
+        "doc_id": "pcmt-dieu-2"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:252",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 9,
+        "penalty": "",
+        "text": "9. Kiểm soát các hoạt động hợp pháp liên quan đến ma túy là việc cho phép,\ntheo dõi, kiểm tra, giám sát các hoạt động hợp pháp liên quan đến ma túy và phòng\nngừa, ngăn chặn việc lợi dụng các hoạt động đó vào mục đích khác.",
+        "id": "Điều 2 Luật PCMT khoản 9",
+        "doc_id": "pcmt-dieu-2"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:253",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 10,
+        "penalty": "",
+        "text": "10. Người sử dụng trái phép chất ma túy là người có hành vi sử dụng chất ma\ntúy mà không được sự cho phép của người hoặc cơ quan chuyên môn có thẩm\nquyền và xét nghiệm chất ma túy trong cơ thể có kết quả dương tính.",
+        "id": "Điều 2 Luật PCMT khoản 10",
+        "doc_id": "pcmt-dieu-2"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:254",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 11,
+        "penalty": "",
+        "text": "11. Xét nghiệm chất ma túy trong cơ thể là việc thực hiện các kỹ thuật chuyên\nmôn nhằm xác định chất ma túy trong cơ thể thông qua mẫu nước tiểu, mẫu máu\nhoặc các mẫu vật khác của cơ thể người.",
+        "id": "Điều 2 Luật PCMT khoản 11",
+        "doc_id": "pcmt-dieu-2"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:255",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 12,
+        "penalty": "",
+        "text": "12. Người nghiện ma túy là người sử dụng chất ma túy, thuốc gây nghiện,\nthuốc hướng thần và bị lệ thuộc vào các chất này.",
+        "id": "Điều 2 Luật PCMT khoản 12",
+        "doc_id": "pcmt-dieu-2"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:256",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 13,
+        "penalty": "",
+        "text": "13. Cai nghiện ma túy là quá trình thực hiện các hoạt động hỗ trợ về y tế, tâm\nlý, xã hội, giúp người nghiện ma túy dừng sử dụng chất ma túy, thuốc gây nghiện,\nthuốc hướng thần, phục hồi thể chất, tinh thần, nâng cao nhận thức, thay đổi hành\nvi để chấm dứt việc sử dụng trái phép các chất này.",
+        "id": "Điều 2 Luật PCMT khoản 13",
+        "doc_id": "pcmt-dieu-2"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:257",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 14,
+        "penalty": "",
+        "text": "14. Cơ sở cai nghiện ma túy là cơ sở được thành lập để thực hiện đầy đủ quy\ntrình cai nghiện theo quy định của Luật này, bao gồm cơ sở cai nghiện ma túy\ncông lập và cơ sở cai nghiện ma túy tự nguyện.",
+        "id": "Điều 2 Luật PCMT khoản 14",
+        "doc_id": "pcmt-dieu-2"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:258",
+      "labels": [
+        "Article"
+      ],
+      "properties": {
+        "law": "Luật PCMT",
+        "id": "Điều 3 Luật PCMT",
+        "title": "Chính sách của Nhà nước về phòng, chống ma túy",
+        "doc_id": "pcmt-dieu-3"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:259",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 1,
+        "penalty": "",
+        "text": "1. Thực hiện đồng bộ các biện pháp phòng, chống ma túy; kết hợp với phòng,\nchống HIV/AIDS và các tệ nạn xã hội khác.",
+        "id": "Điều 3 Luật PCMT khoản 1",
+        "doc_id": "pcmt-dieu-3"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:26",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [
+          "Phannhibeauty",
+          "TikToker Phannhibeauty"
+        ],
+        "name": "Phan Kim Nhi",
+        "doc_id": "news-100260922111804786"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:260",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 2,
+        "penalty": "",
+        "text": "2. Tăng cường hoạt động tuyên truyền, giáo dục về công tác phòng, chống ma\ntúy; khuyến khích tổ chức, cá nhân tham gia tuyên truyền, giáo dục phòng, chống\nma túy.",
+        "id": "Điều 3 Luật PCMT khoản 2",
+        "doc_id": "pcmt-dieu-3"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:261",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 3,
+        "penalty": "",
+        "text": "3. Ưu tiên nguồn lực phòng, chống ma túy cho vùng đồng bào dân tộc thiểu số\nvà miền núi, vùng sâu, vùng xa, hải đảo, khu vực biên giới và địa bàn phức tạp về\nma túy.",
+        "id": "Điều 3 Luật PCMT khoản 3",
+        "doc_id": "pcmt-dieu-3"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:262",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 4,
+        "penalty": "",
+        "text": "4. Cán bộ, chiến sĩ thuộc cơ quan chuyên trách phòng, chống tội phạm về ma\ntúy, người làm công tác cai nghiện ma túy trong các cơ sở cai nghiện ma túy công\nlập được hưởng chế độ, chính sách ưu đãi phù hợp với tính chất nhiệm vụ, địa bàn\nhoạt động theo quy định của Chính phủ.",
+        "id": "Điều 3 Luật PCMT khoản 4",
+        "doc_id": "pcmt-dieu-3"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:263",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 5,
+        "penalty": "",
+        "text": "5. Bảo vệ, hỗ trợ cá nhân, gia đình, cơ quan, tổ chức tham gia phòng, chống\nma túy.",
+        "id": "Điều 3 Luật PCMT khoản 5",
+        "doc_id": "pcmt-dieu-3"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:264",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 6,
+        "penalty": "",
+        "text": "6. Quản lý chặt chẽ người sử dụng trái phép chất ma túy, người nghiện ma túy;\nkhuyến khích người nghiện ma túy tự nguyện cai nghiện ma túy, điều trị nghiện\ncác chất dạng thuốc phiện bằng thuốc thay thế; khuyến khích cá nhân, gia đình, cơ\nquan, tổ chức tham gia, hỗ trợ hoạt động cai nghiện ma túy, quản lý sau cai nghiện\nma túy.",
+        "id": "Điều 3 Luật PCMT khoản 6",
+        "doc_id": "pcmt-dieu-3"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:265",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 7,
+        "penalty": "",
+        "text": "7. Bảo đảm kinh phí cai nghiện ma túy bắt buộc; hỗ trợ kinh phí cai nghiện ma\ntúy tự nguyện, kinh phí quản lý sau cai nghiện ma túy.",
+        "id": "Điều 3 Luật PCMT khoản 7",
+        "doc_id": "pcmt-dieu-3"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:266",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 8,
+        "penalty": "",
+        "text": "8. Tổ chức, cá nhân trong nước và ngoài nước đầu tư vào hoạt động cai nghiện\nma túy, hỗ trợ quản lý sau cai nghiện ma túy, phòng, chống tái nghiện ma túy được\nmiễn, giảm tiền thuê đất, thuế thu nhập doanh nghiệp theo quy định của pháp luật.",
+        "id": "Điều 3 Luật PCMT khoản 8",
+        "doc_id": "pcmt-dieu-3"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:267",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 9,
+        "penalty": "",
+        "text": "9. Khuyến khích nghiên cứu khoa học, phát triển công nghệ và ứng dụng công\nnghệ cao trong phòng, chống ma túy.",
+        "id": "Điều 3 Luật PCMT khoản 9",
+        "doc_id": "pcmt-dieu-3"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:268",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 10,
+        "penalty": "",
+        "text": "10. Khen thưởng cá nhân, tổ chức, cơ quan có thành tích trong phòng, chống\nma túy.",
+        "id": "Điều 3 Luật PCMT khoản 10",
+        "doc_id": "pcmt-dieu-3"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:269",
+      "labels": [
+        "Article"
+      ],
+      "properties": {
+        "law": "Luật PCMT",
+        "id": "Điều 4 Luật PCMT",
+        "title": "Nguồn tài chính cho phòng, chống ma túy",
+        "doc_id": "pcmt-dieu-4"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:27",
+      "labels": [
+        "Case"
+      ],
+      "properties": {
+        "date": "2023-09-12",
+        "summary": "Hoàng Nato và TikToker Phannhibeauty khai nhận đã cùng nhau sử dụng ma túy etomidate ngụy trang trong thuốc lá điện tử. Cả hai bị bắt giữ sau khi tổ chức sử dụng ma túy.",
+        "name": "Vụ sử dụng ma túy etomidate của Hoàng Nato và Phan Kim Nhi",
+        "doc_id": "news-100260924095400982",
+        "source_title": "TikToker Phannhibeauty khai lý do sử dụng pod chill chứa ma túy cùng ‘Hoàng Nato’"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:270",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 1,
+        "penalty": "",
+        "text": "1. Ngân sách nhà nước.",
+        "id": "Điều 4 Luật PCMT khoản 1",
+        "doc_id": "pcmt-dieu-4"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:271",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 2,
+        "penalty": "",
+        "text": "2. Nguồn tài trợ, viện trợ, đầu tư, tặng cho của tổ chức, cá nhân trong nước và\nngoài nước.",
+        "id": "Điều 4 Luật PCMT khoản 2",
+        "doc_id": "pcmt-dieu-4"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:272",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 3,
+        "penalty": "",
+        "text": "3. Chi trả của gia đình, người nghiện ma túy.",
+        "id": "Điều 4 Luật PCMT khoản 3",
+        "doc_id": "pcmt-dieu-4"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:273",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 4,
+        "penalty": "",
+        "text": "4. Các nguồn tài chính hợp pháp khác.",
+        "id": "Điều 4 Luật PCMT khoản 4",
+        "doc_id": "pcmt-dieu-4"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:274",
+      "labels": [
+        "Article"
+      ],
+      "properties": {
+        "law": "Luật PCMT",
+        "id": "Điều 5 Luật PCMT",
+        "title": "Các hành vi bị nghiêm cấm",
+        "doc_id": "pcmt-dieu-5"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:275",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 1,
+        "penalty": "",
+        "text": "1. Trồng cây có chứa chất ma túy, hướng dẫn trồng cây có chứa chất ma túy.",
+        "id": "Điều 5 Luật PCMT khoản 1",
+        "doc_id": "pcmt-dieu-5"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:276",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 2,
+        "penalty": "",
+        "text": "2. Nghiên cứu, giám định, kiểm nghiệm, kiểm định, sản xuất, tàng trữ, vận\nchuyển, bảo quản, tồn trữ, mua bán, phân phối, xử lý, trao đổi, xuất khẩu, nhập\nkhẩu, tạm nhập, tái xuất, tạm xuất, tái nhập, quá cảnh trái phép chất ma túy, tiền chất, thuốc gây nghiện, thuốc hướng thần, thuốc tiền chất, nguyên liệu làm thuốc là\ndược chất gây nghiện, dược chất hướng thần, tiền chất dùng làm thuốc, thuốc thú y\ncó chứa chất ma túy, tiền chất.",
+        "id": "Điều 5 Luật PCMT khoản 2",
+        "doc_id": "pcmt-dieu-5"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:277",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 3,
+        "penalty": "",
+        "text": "3. Chiếm đoạt chất ma túy, tiền chất, thuốc gây nghiện, thuốc hướng thần,\nthuốc tiền chất, nguyên liệu làm thuốc là dược chất gây nghiện, dược chất hướng\nthần, tiền chất dùng làm thuốc, thuốc thú y có chứa chất ma túy, tiền chất.",
+        "id": "Điều 5 Luật PCMT khoản 3",
+        "doc_id": "pcmt-dieu-5"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:278",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 4,
+        "penalty": "",
+        "text": "4. Giao nhận, quản lý, kiểm soát, lưu giữ, cấp phát, bảo quản chất ma túy, tiền\nchất trái quy định của pháp luật; cho phép người sử dụng chất ma túy, thuốc gây\nnghiện hoặc thuốc hướng thần trái quy định của pháp luật.",
+        "id": "Điều 5 Luật PCMT khoản 4",
+        "doc_id": "pcmt-dieu-5"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:279",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 5,
+        "penalty": "",
+        "text": "5. Sử dụng, tổ chức sử dụng trái phép chất ma túy; cưỡng bức, lôi kéo người\nkhác sử dụng trái phép chất ma túy; chứa chấp, hỗ trợ việc sử dụng trái phép chất\nma túy.",
+        "id": "Điều 5 Luật PCMT khoản 5",
+        "doc_id": "pcmt-dieu-5"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:28",
+      "labels": [
+        "Case"
+      ],
+      "properties": {
+        "date": "2023-09-16",
+        "summary": "Nguyễn Minh Đức, biệt danh 'Đức Cộng', đã bị bắt giữ về hành vi tổ chức sử dụng trái phép chất ma túy. Đức có 8 tiền án và 1 tiền sự trước khi bị bắt.",
+        "name": "Vụ bắt giữ giang hồ mạng 'Đức Cộng'",
+        "doc_id": "news-100260924101703641",
+        "source_title": "Công an Ninh Bình khen thưởng đột xuất vụ bắt giang hồ mạng 'Đức Cộng'"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:280",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 6,
+        "penalty": "",
+        "text": "6. Sản xuất, tàng trữ, vận chuyển, mua bán phương tiện, dụng cụ dùng vào việc\nsản xuất hoặc sử dụng trái phép chất ma túy.",
+        "id": "Điều 5 Luật PCMT khoản 6",
+        "doc_id": "pcmt-dieu-5"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:281",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 7,
+        "penalty": "",
+        "text": "7. Chống lại hoặc cản trở việc xét nghiệm chất ma túy trong cơ thể, xác định\ntình trạng nghiện ma túy, quản lý người sử dụng trái phép chất ma túy, cai nghiện\nma túy, quản lý sau cai nghiện ma túy.",
+        "id": "Điều 5 Luật PCMT khoản 7",
+        "doc_id": "pcmt-dieu-5"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:282",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 8,
+        "penalty": "",
+        "text": "8. Trả thù hoặc cản trở người thực thi nhiệm vụ phòng, chống ma túy, người\ntham gia phòng, chống ma túy.",
+        "id": "Điều 5 Luật PCMT khoản 8",
+        "doc_id": "pcmt-dieu-5"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:283",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 9,
+        "penalty": "",
+        "text": "9. Lợi dụng chức vụ, quyền hạn, nghề nghiệp để vi phạm pháp luật về phòng,\nchống ma túy.",
+        "id": "Điều 5 Luật PCMT khoản 9",
+        "doc_id": "pcmt-dieu-5"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:284",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 10,
+        "penalty": "",
+        "text": "10. Hướng dẫn sản xuất, hướng dẫn sử dụng trái phép chất ma túy; quảng cáo,\ntiếp thị chất ma túy.",
+        "id": "Điều 5 Luật PCMT khoản 10",
+        "doc_id": "pcmt-dieu-5"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:285",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 11,
+        "penalty": "",
+        "text": "11. Kỳ thị người sử dụng trái phép chất ma túy, người cai nghiện ma túy,\nngười sau cai nghiện ma túy.",
+        "id": "Điều 5 Luật PCMT khoản 11",
+        "doc_id": "pcmt-dieu-5"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:286",
+      "labels": [
+        "Clause"
+      ],
+      "properties": {
+        "number": 12,
+        "penalty": "",
+        "text": "12. Các hành vi bị nghiêm cấm khác do luật định liên quan đến ma túy.",
+        "id": "Điều 5 Luật PCMT khoản 12",
+        "doc_id": "pcmt-dieu-5"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:29",
+      "labels": [
+        "Location"
+      ],
+      "properties": {
+        "name": "Ninh Bình",
+        "doc_id": "news-100260924101703641"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:3",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Cái Quang Huy",
+        "doc_id": "news-100260917203001265"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:30",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [
+          "Đức Cộng"
+        ],
+        "name": "Nguyễn Minh Đức",
+        "doc_id": "news-100260924101703641"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:31",
+      "labels": [
+        "Case"
+      ],
+      "properties": {
+        "date": "2023-09-28",
+        "summary": "Vụ án liên quan đến việc 39 bác sĩ, điều dưỡng thao túng và nhận hối lộ để giúp các bị can trong các vụ án ma túy và lừa đảo có kết luận giám định tâm thần sai lệch.",
+        "name": "Vụ án tại Viện Pháp y tâm thần Trung ương",
+        "doc_id": "news-100260924105118645",
+        "source_title": "Cách bà ‘trùm’ thao túng 39 bác sĩ, điều dưỡng, biến Viện Pháp y tâm thần thành ‘chốn trú ẩn’ của tội phạm"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:32",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [
+          "bà 'trùm'",
+          "bà trùm"
+        ],
+        "name": "Nguyễn Thị Mai Anh",
+        "doc_id": "news-100260924105118645"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:33",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Lê Văn Đông",
+        "doc_id": "news-100260924105118645"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:34",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [
+          "cựu viện trưởng"
+        ],
+        "name": "Trần Văn Trường",
+        "doc_id": "news-100260924105118645"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:35",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [
+          "Phó viện trưởng"
+        ],
+        "name": "Dương Văn Lương",
+        "doc_id": "news-100260924105118645"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:36",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [
+          "Trưởng khoa giám định"
+        ],
+        "name": "Dương Văn Biết",
+        "doc_id": "news-100260924105118645"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:37",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Bùi Thị Thanh Thủy",
+        "doc_id": "news-100260924105118645"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:38",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "DJ Thái Hoàng",
+        "doc_id": "news-100260924105118645"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:39",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Nguyễn Văn Quang",
+        "doc_id": "news-100260924105118645"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:4",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Nguyễn Tiến Đạt",
+        "doc_id": "news-100260917203001265"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:40",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Nguyễn Thị Thu Hoài",
+        "doc_id": "news-100260924105118645"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:41",
+      "labels": [
+        "Case"
+      ],
+      "properties": {
+        "date": "2023-09-23",
+        "summary": "Giới chức Campuchia đã bắt giữ 7 công dân Trung Quốc và thu giữ hơn 800kg chất nghi là ma túy đá trong một chiến dịch quy mô lớn.",
+        "name": "Vụ vận chuyển 840kg ma túy đá tại Campuchia",
+        "doc_id": "news-100260924145818945",
+        "source_title": "Campuchia bắt nhóm người Trung Quốc vận chuyển cả kho súng đạn giữa đêm"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:42",
+      "labels": [
+        "Location"
+      ],
+      "properties": {
+        "name": "Preah Sihanouk",
+        "doc_id": "news-100260924145818945"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:43",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "7 công dân Trung Quốc",
+        "doc_id": "news-100260924145818945"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:44",
+      "labels": [
+        "Case"
+      ],
+      "properties": {
+        "date": "2023-09-19",
+        "summary": "Công an TP.HCM đã triệt phá 8 đường dây ma túy và bắt giữ 126 người liên quan đến các hành vi mua bán, tàng trữ, tổ chức sử dụng và sử dụng trái phép chất ma túy, trong đó có 'Hoàng Nato' và bạn gái Phan Kim Nhi.",
+        "name": "Vụ triệt phá 8 đường dây ma túy tại TP.HCM",
+        "doc_id": "news-100260925144412498",
+        "source_title": "Công an TP.HCM và 10 ngày đêm ròng rã bắt ‘Hoàng Nato’, triệt phá 8 đường dây ma túy"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:45",
+      "labels": [
+        "Case"
+      ],
+      "properties": {
+        "date": "2023-09-10",
+        "summary": "Nguyễn Minh Nhân đã tông vào Thiếu tá Trần Ngọc Nam trong khi chạy xe không có giấy phép lái xe và sử dụng rượu, ma túy.",
+        "name": "Vụ tông cảnh sát giao thông ở An Giang",
+        "doc_id": "news-100260926112415229",
+        "source_title": "Vụ tông cảnh sát giao thông ở An Giang: Tài xế sử dụng rượu, ma túy và không có giấy phép lái xe"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:46",
+      "labels": [
+        "Location"
+      ],
+      "properties": {
+        "name": "An Giang",
+        "doc_id": "news-100260926112415229"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:47",
+      "labels": [
+        "Substance"
+      ],
+      "properties": {
+        "name": "ma túy"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:48",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Nguyễn Minh Nhân",
+        "doc_id": "news-100260926112415229"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:49",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Trần Ngọc Nam",
+        "doc_id": "news-100260926112415229"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:5",
+      "labels": [
+        "Case"
+      ],
+      "properties": {
+        "date": "2025-09-18",
+        "summary": "Ba thanh niên góp tiền để Lê Minh Thành mua ma túy cho tiệc sinh nhật nhưng sau đó không tham gia. Tòa sơ thẩm tuyên phạt mỗi người 24 tháng tù về tội mua bán trái phép chất ma túy.",
+        "name": "Vụ góp tiền mua ma túy tại Hà Nội",
+        "doc_id": "news-100260918080821054",
+        "source_title": "Góp 14 triệu đồng mua ma túy rồi nói đã ‘rút lui’, 3 thanh niên kháng cáo kêu oan"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:50",
+      "labels": [
+        "Case"
+      ],
+      "properties": {
+        "date": "2023-09-27",
+        "summary": "Lực lượng biên phòng phát hiện một bao tải nghi chứa 20kg ma túy trôi dạt vào bờ biển Phú Quốc. Kiện hàng được kiểm tra và xác định có chứa nhiều tinh thể rắn màu trắng nghi là chất ma túy.",
+        "name": "Vụ phát hiện 20kg ma túy tại Phú Quốc",
+        "doc_id": "news-100260927182621527",
+        "source_title": "Biên phòng phát hiện bao tải dạt vào bờ biển, nghi chứa 20kg ma túy"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:51",
+      "labels": [
+        "Location"
+      ],
+      "properties": {
+        "name": "Phú Quốc, An Giang",
+        "doc_id": "news-100260927182621527"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:52",
+      "labels": [
+        "Substance"
+      ],
+      "properties": {
+        "name": "chất ma túy"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:53",
+      "labels": [
+        "Case"
+      ],
+      "properties": {
+        "date": "2025-04-04",
+        "summary": "Hai bị cáo Trần Thanh Tuấn và Trần Minh Tâm bị tuyên án tử hình về tội mua bán trái phép chất ma túy. Bốn bị cáo khác nhận án tù từ 2 năm 6 tháng đến 8 năm 6 tháng.",
+        "name": "Vụ mua bán hơn 36kg ma túy tại TP.HCM",
+        "doc_id": "news-100260928173914514",
+        "source_title": "Mua bán hơn 36kg ma túy, hai bị cáo lãnh án tử hình"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:54",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Trần Thanh Tuấn",
+        "doc_id": "news-100260928173914514"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:55",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Trần Minh Tâm",
+        "doc_id": "news-100260928173914514"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:56",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Đỗ Thị Ngọc Yến",
+        "doc_id": "news-100260928173914514"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:57",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Võ Nữ Minh Thư",
+        "doc_id": "news-100260928173914514"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:58",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Đinh Đức Tuấn",
+        "doc_id": "news-100260928173914514"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:59",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Trần Ngọc Thảo",
+        "doc_id": "news-100260928173914514"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:6",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Lê Minh Thành",
+        "doc_id": "news-100260918080821054"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:60",
+      "labels": [
+        "Case"
+      ],
+      "properties": {
+        "date": "2025-06-06",
+        "summary": "Lê Văn Đông, trong thời gian chữa bệnh bắt buộc, đã tổ chức sử dụng ma túy trên bãi biển Sầm Sơn cùng với một số người khác. Đông bị cáo buộc đã trốn viện để thực hiện hành vi này.",
+        "name": "Vụ tổ chức sử dụng ma túy tại Sầm Sơn",
+        "doc_id": "news-100260930085028036",
+        "source_title": "Bệnh nhân ‘tâm thần’ kể cuộc chơi ma túy trên bãi biển cùng điều dưỡng Viện Pháp y tâm thần"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:61",
+      "labels": [
+        "Location"
+      ],
+      "properties": {
+        "name": "Thanh Hóa",
+        "doc_id": "news-100260930085028036"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:62",
+      "labels": [
+        "Substance"
+      ],
+      "properties": {
+        "name": "methamphetamine"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:63",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Ngô Việt Dũng",
+        "doc_id": "news-100260930085028036"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:64",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Cao Thị Bích Hằng",
+        "doc_id": "news-100260930085028036"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:65",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Trần Quốc An",
+        "doc_id": "news-100260930085028036"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:66",
+      "labels": [
+        "Case"
+      ],
+      "properties": {
+        "date": "2026-10-02",
+        "summary": "Bộ đội Biên phòng đã triệt phá chuyên án A3-626P, bắt giữ 2 đối tượng và thu giữ 40kg ma túy.",
+        "name": "Chuyên án A3-626P",
+        "doc_id": "news-100261002184934505",
+        "source_title": "Bộ đội Biên phòng quyết liệt phối hợp xây dựng xã, phường, đặc khu 'không ma túy'"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:7",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Trịnh Vũ Kiên",
+        "doc_id": "news-100260918080821054"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:8",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Kim Xuân Tuấn",
+        "doc_id": "news-100260918080821054"
+      }
+    },
+    {
+      "id": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:9",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "aliases": [],
+        "name": "Nguyễn Quang Hưng",
+        "doc_id": "news-100260918080821054"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:0",
+      "type": "LOCATED_IN",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:1"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:0",
+      "type": "CHARGED_WITH",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:178"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:0",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "9.6kg"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:0",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "406g"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:2"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:3",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị cáo",
+        "charge": "vận chuyển trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:0"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:4",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị cáo",
+        "charge": "vận chuyển trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:0"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:5",
+      "type": "LOCATED_IN",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:1"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:5",
+      "type": "CHARGED_WITH",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:185"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:5",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "5 viên"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:5",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "nửa chỉ"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:2"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:6",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "36 tháng tù",
+        "role": "bị cáo",
+        "charge": "mua bán trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:5"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:7",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "24 tháng tù",
+        "role": "bị cáo",
+        "charge": "mua bán trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:5"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:8",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "24 tháng tù",
+        "role": "bị cáo",
+        "charge": "mua bán trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:5"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:9",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "24 tháng tù",
+        "role": "bị cáo",
+        "charge": "mua bán trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:5"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:10",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "9,6kg"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:10",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "406g"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:2"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:3",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "nghi phạm",
+        "charge": ""
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:10"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:11",
+      "type": "LOCATED_IN",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:12"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:11",
+      "type": "CHARGED_WITH",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:185"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:11",
+      "type": "CHARGED_WITH",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:171"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:11",
+      "type": "CHARGED_WITH",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:212"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:11",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "không rõ"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:13"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:11",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "khoảng 100g"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:14"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:11",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "không rõ"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:15"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:11",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "khoảng 100g"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:16"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:17",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị cáo",
+        "charge": "tổ chức sử dụng trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:11"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:18",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị can",
+        "charge": "mua bán trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:11"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:19",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị can",
+        "charge": "mua bán trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:11"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:20",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị can",
+        "charge": "mua bán trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:11"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:21",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị can",
+        "charge": "mua bán trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:11"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:22",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị can",
+        "charge": "mua bán trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:11"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:23",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị can",
+        "charge": "mua bán trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:11"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:24",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị can",
+        "charge": "mua bán trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:11"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:25",
+      "type": "LOCATED_IN",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:12"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:25",
+      "type": "CHARGED_WITH",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:212"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:25",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "không rõ"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:13"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:26",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị cáo",
+        "charge": "tổ chức sử dụng trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:25"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:17",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị cáo",
+        "charge": "tổ chức sử dụng trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:25"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:27",
+      "type": "LOCATED_IN",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:12"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:27",
+      "type": "CHARGED_WITH",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:212"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:27",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "không rõ"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:13"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:17",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "chuỗi rỗng",
+        "role": "bị cáo",
+        "charge": "tổ chức sử dụng trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:27"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:26",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "chuỗi rỗng",
+        "role": "bị cáo",
+        "charge": "tổ chức sử dụng trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:27"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:28",
+      "type": "LOCATED_IN",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:29"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:28",
+      "type": "CHARGED_WITH",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:212"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:30",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị cáo",
+        "charge": "tổ chức sử dụng trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:28"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:31",
+      "type": "LOCATED_IN",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:1"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:31",
+      "type": "CHARGED_WITH",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:238"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:31",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": ""
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:31",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": ""
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:2"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:31",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": ""
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:31",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": ""
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:32",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị can",
+        "charge": "vi phạm quy định về quản lý chất ma túy, tiền chất, thuốc gây nghiện, thuốc hướng thần"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:31"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:33",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị can",
+        "charge": ""
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:31"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:34",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "người liên quan",
+        "charge": ""
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:31"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:35",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "người liên quan",
+        "charge": ""
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:31"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:36",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "người liên quan",
+        "charge": ""
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:31"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:37",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị can",
+        "charge": "mua bán trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:31"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:38",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị can",
+        "charge": "mua bán trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:31"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:39",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "cán bộ",
+        "charge": ""
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:31"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:40",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "cán bộ",
+        "charge": ""
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:31"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:41",
+      "type": "LOCATED_IN",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:42"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:41",
+      "type": "CHARGED_WITH",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:178"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:41",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "840kg"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:43",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị cáo",
+        "charge": "vận chuyển trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:41"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:44",
+      "type": "LOCATED_IN",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:12"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:44",
+      "type": "CHARGED_WITH",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:185"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:44",
+      "type": "CHARGED_WITH",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:212"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:44",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "hơn 1.000 đầu pod chill"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:13"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:17",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị cáo",
+        "charge": "tổ chức sử dụng trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:44"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:26",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị cáo",
+        "charge": "tổ chức sử dụng trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:44"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:45",
+      "type": "LOCATED_IN",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:46"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:45",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": ""
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:47"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:48",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "bị can",
+        "charge": ""
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:45"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:49",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "",
+        "role": "người liên quan",
+        "charge": ""
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:45"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:50",
+      "type": "LOCATED_IN",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:51"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:50",
+      "type": "CHARGED_WITH",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:178"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:50",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "20kg"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:52"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:53",
+      "type": "LOCATED_IN",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:12"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:53",
+      "type": "CHARGED_WITH",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:185"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:53",
+      "type": "CHARGED_WITH",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:212"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:53",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "36kg"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:47"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:54",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "tử hình",
+        "role": "bị cáo",
+        "charge": "mua bán trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:53"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:55",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "tử hình",
+        "role": "bị cáo",
+        "charge": "mua bán trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:53"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:56",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "8 năm 6 tháng tù",
+        "role": "bị cáo",
+        "charge": "mua bán trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:53"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:57",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "8 năm tù",
+        "role": "bị cáo",
+        "charge": "mua bán trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:53"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:58",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "2 năm 6 tháng tù",
+        "role": "bị cáo",
+        "charge": "tổ chức sử dụng trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:53"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:59",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "2 năm 6 tháng tù",
+        "role": "bị cáo",
+        "charge": "tổ chức sử dụng trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:53"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:60",
+      "type": "LOCATED_IN",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:61"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:60",
+      "type": "CHARGED_WITH",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:171"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:60",
+      "type": "CHARGED_WITH",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:212"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:60",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "0,686g"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:60",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "không rõ"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:62"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:60",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "không rõ"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:14"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:60",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "không rõ"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:33",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "không rõ",
+        "role": "bị cáo",
+        "charge": "tổ chức sử dụng trái phép chất ma túy"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:60"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:32",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "không rõ",
+        "role": "bị cáo",
+        "charge": ""
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:60"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:63",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "không rõ",
+        "role": "người liên quan",
+        "charge": ""
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:60"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:64",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "không rõ",
+        "role": "người liên quan",
+        "charge": ""
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:60"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:65",
+      "type": "INVOLVED_IN",
+      "properties": {
+        "sentence": "không rõ",
+        "role": "người liên quan",
+        "charge": ""
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:60"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:66",
+      "type": "LOCATED_IN",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:12"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:66",
+      "type": "CHARGED_WITH",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:185"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:66",
+      "type": "INVOLVES",
+      "properties": {
+        "amount": "40kg"
+      },
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:47"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:148",
+      "type": "DEFINES",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:149"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:148",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:150"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:150",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:150",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:150",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:148",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:154"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:148",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:155"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:148",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:156"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:157",
+      "type": "DEFINES",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:158"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:157",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:159"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:157",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:160"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:160",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:161"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:160",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:162"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:160",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:160",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:164"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:160",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:160",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:166"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:160",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:160",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:160",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:157",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:167"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:167",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:161"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:167",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:162"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:167",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:167",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:164"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:167",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:167",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:166"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:167",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:167",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:167",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:157",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:168"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:168",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:161"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:168",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:162"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:168",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:168",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:164"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:168",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:168",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:166"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:168",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:168",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:168",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:157",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:169"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:170",
+      "type": "DEFINES",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:171"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:170",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:172"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:172",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:161"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:172",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:162"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:172",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:172",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:164"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:172",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:172",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:166"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:172",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:172",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:172",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:170",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:173"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:173",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:161"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:173",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:162"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:173",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:173",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:164"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:173",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:173",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:166"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:173",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:173",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:173",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:170",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:174"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:174",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:161"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:174",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:162"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:174",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:174",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:164"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:174",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:174",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:166"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:174",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:174",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:174",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:170",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:175"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:175",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:161"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:175",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:162"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:175",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:175",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:164"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:175",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:175",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:166"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:175",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:175",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:175",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:170",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:176"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:177",
+      "type": "DEFINES",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:178"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:177",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:179"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:179",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:161"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:179",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:162"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:179",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:179",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:164"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:179",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:179",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:166"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:179",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:179",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:179",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:177",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:180"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:180",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:161"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:180",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:162"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:180",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:180",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:164"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:180",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:180",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:166"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:180",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:180",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:180",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:177",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:181"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:181",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:161"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:181",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:162"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:181",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:181",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:164"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:181",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:181",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:166"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:181",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:181",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:181",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:177",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:182"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:182",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:161"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:182",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:162"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:182",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:182",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:164"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:182",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:182",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:166"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:182",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:182",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:182",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:177",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:183"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:184",
+      "type": "DEFINES",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:185"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:184",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:186"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:184",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:187"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:187",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:161"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:187",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:162"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:187",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:187",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:164"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:187",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:187",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:166"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:187",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:187",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:187",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:184",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:188"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:188",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:161"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:188",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:162"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:188",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:188",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:164"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:188",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:188",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:166"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:188",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:188",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:188",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:184",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:189"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:189",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:161"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:189",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:162"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:189",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:189",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:164"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:189",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:189",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:166"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:189",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:189",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:189",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:184",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:190"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:191",
+      "type": "DEFINES",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:192"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:191",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:193"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:193",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:161"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:193",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:162"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:193",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:193",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:164"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:193",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:193",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:166"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:193",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:193",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:193",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:191",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:194"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:194",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:161"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:194",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:162"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:194",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:194",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:164"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:194",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:194",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:166"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:194",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:194",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:194",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:191",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:195"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:195",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:161"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:195",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:162"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:195",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:195",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:164"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:195",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:195",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:166"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:195",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:195",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:195",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:191",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:196"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:196",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:161"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:196",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:162"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:196",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:163"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:196",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:164"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:196",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:165"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:196",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:166"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:196",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:196",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:196",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:191",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:197"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:198",
+      "type": "DEFINES",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:199"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:198",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:200"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:198",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:201"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:198",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:202"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:198",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:203"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:198",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:204"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:198",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:205"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:206",
+      "type": "DEFINES",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:207"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:206",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:208"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:206",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:209"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:206",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:210"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:211",
+      "type": "DEFINES",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:212"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:211",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:213"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:211",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:214"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:211",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:215"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:211",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:216"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:211",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:217"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:218",
+      "type": "DEFINES",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:219"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:218",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:220"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:218",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:221"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:218",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:222"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:223",
+      "type": "DEFINES",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:224"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:223",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:225"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:223",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:226"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:223",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:227"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:223",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:228"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:223",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:229"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:230",
+      "type": "DEFINES",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:231"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:230",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:232"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:230",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:233"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:230",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:234"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:230",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:235"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:230",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:236"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:237",
+      "type": "DEFINES",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:238"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:237",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:239"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:237",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:240"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:237",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:241"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:243",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:244"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:243",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:245"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:243",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:246"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:243",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:247"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:243",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:248"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:243",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:249"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:249",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:151"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:249",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:249",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:153"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:243",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:250"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:243",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:251"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:243",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:252"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:243",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:253"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:243",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:254"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:243",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:255"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:243",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:256"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:243",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:257"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:258",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:259"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:258",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:260"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:258",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:261"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:258",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:262"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:258",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:263"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:258",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:264"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:264",
+      "type": "MENTIONS",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:152"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:258",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:265"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:258",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:266"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:258",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:267"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:258",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:268"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:269",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:270"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:269",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:271"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:269",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:272"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:269",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:273"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:274",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:275"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:274",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:276"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:274",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:277"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:274",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:278"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:274",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:279"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:274",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:280"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:274",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:281"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:274",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:282"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:274",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:283"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:274",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:284"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:274",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:285"
+    },
+    {
+      "source": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:274",
+      "type": "HAS_CLAUSE",
+      "properties": {},
+      "target": "4:7cb5358c-a4e0-45f0-94f0-41389aece2eb:286"
+    }
+  ]
+}
